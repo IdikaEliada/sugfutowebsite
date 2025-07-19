@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="html dark" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!--cuttr Js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cuttr/1.4.3/cuttr.min.js"></script>
+  
+  <!-- font family sora -->
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Taiwind -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+  <!-- Basic Meta Tags -->
+  <meta name="description" content="The Association of Software Engineering Students, Federal University of Technology, Owerri">
+  <meta name="keywords" content="federal, university, technology, owerri, programming, futo, ases, ascension family, software engineering, the pro software engineering">
+  <meta name="author" content="The pro software engineering">
+    
+  <!-- Open Graph (Fb, LinkedIn) -->
+  <meta property="og:title" content="ASES Family, FUTO">
+  <meta property="og:description" content="The Association of Software Engineering Students, FUTOwerri">
+  <meta property="og:image" content="https://i.ibb.co/nsJC6qN6/IMG-20250511-WA0131.jpg">
+  <meta property="og:url" content="https://">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="<summ></summ>ary_large_image">
+  <meta name="twitter:title" content="ASES Family FUTO">
+  <meta name="twitter:description" content="The Association of Software Engineering Students, FUTOwerri">
+  <meta name="twitter:image" content="https://i.ibb.co/nsJC6qN6/IMG-20250511-WA0131.jpg">
+
+  <!-- Robots (SEO) -->
+  <meta name="robots" content="index, follow">
+  
+  <!--favicon-->
+  <link rel="shortcut icon" type="image/x-icon" href="https://i.ibb.co/nsJC6qN6/IMG-20250511-WA0131.jpg">
+  
+  <!-- AOC -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+  <!-- font awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+  
+  <link rel="stylesheet" href="styles.css">
+  
+  <title>ASES FUTO</title>
+</head>
+
+<body style="font-family: 'Sora';" class="mx-5 mt-12 bg-[#eeeeee] dark:bg-[#111111] bg-cover bg-center bg-image dark:text-white relative pb-5">
+  
+  <header class="z-3 fixed top-0 right-0 left-0 px-4 py-2 border-b-1 dark:border-black border-white backdrop-blur-sm flex justify-between" >
+    <a href="index.html" class="flex items-center gap-2">
+      <img src="https://i.ibb.co/nsJC6qN6/IMG-20250511-WA0131.jpg" class="rounded-full w-8 h-8">
+      <span class="font-bold text-xl">
+        <span class="md:hidden">ASES</span>
+        <span class="hidden md:inline font-normal">Association of Software Engineering Students
+        </span>
+      </span>
+    </a>
+
+    <div type="button" class="flex  justify-center rounded-full bg-[#0000] px-3 py-2 hover:bg-gray-50 w-8 h-8" id="menu-button" aria-expanded="true" aria-haspopup="true">
+          <i class="fa fa-bars" aria-hidden="true" id="menu-icon"></i>
+        </div>
+  </header>
+  
+  <main class="pt-2">
+    <div class="fixed right-2 z-10 mt-2 w-56 origin-top-right rounded-md bg-[#eeeeee] dark:bg-[#111111] text-gray-800 dark:text-gray-400 shadow-lg ring-1 ring-black/5 focus:outline-hidden hidden backdrop-blur-sm" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1" id="dropdown">
+        <div class="py-1" role="none">
+          <a href="index.html" class="block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0"> 
+            <div class="flex items-center gap-2">
+              <div class="flex justify-center items-center rounded-full px-3 py-2 hover:bg-gray-50 w-1 h-4">
+                <i class='fa fa-home fa-solid text-[12px]'></i>
+              </div>
+              <span>
+                Home
+              </span>
+            </div>
+          </a>
+          
+          <a href="about-us.html" class="block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0"> 
+            <div class="flex items-center gap-2">
+              <div class="flex justify-center items-center rounded-full px-3 py-2 hover:bg-gray-50 w-1 h-4">
+                <i class='fa fa-circle-info fa-solid text-[12px]'></i>
+              </div>
+              <span>
+                About Us
+              </span>
+            </div>
+          </a>
+          <a href="#" class="block px-4 py-2 text-sm " role="menuitem" tabindex="-1" id="menu-item-2">
+            <div class="flex items-center gap-2">
+              <div class="shadow-xs ring-1 ring-white dark:ring-black ring-inset flex justify-center items-center rounded-full bg-green-800 dark:bg-green-500 px-3 py-2 hover:bg-gray-50 w-1 h-4">
+                <i class='fas fa-moon fa-solid text-white dark:text-black text-[8px]'id="theme-icon"></i>
+              </div>
+              <span>
+                <span class="dark:hidden">Light Mode</span>
+                <span class="hidden dark:inline">Dark Mode
+                </span>
+              </span>
+            </div>
+          </a>
+          <form method="POST" action="#" role="none">
+            <button type="submit" class="block w-full px-4 py-2 text-left text-sm" role="menuitem" tabindex="-1" id="menu-item-3">Sign out</button>
+          </form>
+        </div>
+      </div>
+    
+    <!-- Breadcrumb -->
+    <nav class="flex py-3 justify-content items-center text-xs" aria-label="Breadcrumb">
+      <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+        <li class="inline-flex items-center" aria-current="page">
+          <a href="index.html" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+            <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+            </svg>
+            Home
+          </a>
+        </li>
+      </ol>
+    </nav>
+      
+    <section id="hero" class="hero-section mb-4">
+      <div class="hero-content flex flex-col md:flex-row gap-4 items-center justify-center md:w-full  box-content pb-8">
+        <div class="hero-content" data-aos="fade-right" data-aos-delay="100">
+          <h1 class="text-3xl md:text-3xl font-bold">Reliable Solutions Through 
+            <span class="text-green-800 dark:text-green-500">Software Engineering...
+            </span>
+          </h1>
+          <p class="text-xs/5">The Association of Software Engineering Students (ASES), Federal University of Technology, Owerri, is the student-run organization under the Software Engineering Department, fostering professional development, peer interaction, and practical skills among members..
+          </p>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="col-sm-6 hero-media " data-aos="zoom-in" data-aos-delay="200">
+            <img src="https://i.ibb.co/Dg5ds4vH/20250621-003707.jpg" alt="Education" class="img-fluid main-image rounded position-relative" />
+            <div class="image-overlay absolute bottom-0 end-0" data-aos="fade-right" data-aos-delay="200">
+              <div class="flex gap-2 items-center text-white rounded p-2 bg-linear-65 from-green-500 to-green-800">
+                <i class="fa-solid fa-star fa-beat-fade" style="font-size: 10px;"></i>
+                <span style="font-size: 12px" class="">ASES, FUTO
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hero Section -->
+  
+    <section class="executives-section relative">
+      <div class="sticky top-10 -mx-5 px-5 py-3 border-b-1 border-black/2 dark:border-white/2 backdrop-blur-md z-2">
+        <label id="listbox-label" class="block text-sm/6 font-medium text-gray-800 dark:text-gray-400">Meet our executive</label>
+        <div class="relative mt-2 text-gray-800 dark:text-gray-400">
+          <button type="button" class="cursor-default rounded-full dark:bg-green-800/25 bg-green-500/25 py-1.5 pr-3 pl-3 text-left outline-none sm:text-sm/6 inline-flex px-3 py-2 text-sm font-semibold shadow-xs dark:text-white text-black hover:bg-gray-50" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label" id="select-excos">
+            <span class="col-start-1 row-start-1 flex items-center gap-3 pr-6">
+              <span class="block truncate" id="selected-excos">Ascension Family</span>
+            </span>
+            <svg class="col-start-1 row-start-1 size-5 self-center justify-self-end sm:size-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
+              <path fill-rule="evenodd" d="M5.22 10.22a.75.75 0 0 1 1.06 0L8 11.94l1.72-1.72a.75.75 0 1 1 1.06 1.06l-2.25 2.25a.75.75 0 0 1-1.06 0l-2.25-2.25a.75.75 0 0 1 0-1.06ZM10.78 5.78a.75.75 0 0 1-1.06 0L8 4.06 6.28 5.78a.75.75 0 0 1-1.06-1.06l2.25-2.25a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd" />
+            </svg>
+          </button>
+      
+          <ul class="absolute hidden z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 dark:ring-white/5 focus:outline-hidden sm:text-sm bg-[#eeeeee] dark:bg-[#111111] " tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3" id="selection-box">
+          </ul>
+        </div>
+      </div>
+      
+      <div class="">
+        <div class="">
+          <div class="md:text-xl py-4 col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4" id="executive-intro" data-aos="fade-left" data-aos-delay="300">
+            Ascension Family is the second elected Executives for the ASES Family, Federal University of Technology, Owerri 
+          </div>
+          <div id="executive-set-container" class ="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 xl:grid-cols-4" data-aos="fade-up" data-aos-delay="300"></div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+  
+  
+  <div class="fixed z-4 top-0 bottom-0 left-0 right-0 flex items-center justify-center" id="preloader">
+    <div class="loader"></div>
+  </div>
+  <script src="script/utilis.js" type="module"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        AOS.init();
+      });
+  </script>
+  <!-- Bootstrap JS -->
+  
+</body>
+
+</html>
