@@ -57,6 +57,20 @@ function getIdNumber(element) {
   return parseInt(parts[parts.length - 1]);
 }
 
+function showPosition(number){
+  lastDigit = Math.abs(number) % 10;
+  
+  if(lastDigit > 3){
+    return `${number}th`
+  } else if(lastDigit > 2){
+    return `${number}rd`
+  } else if(lastDigit > 1){
+    return `${number}nd`
+  } else {
+    return `${number}st`
+  }
+}
+
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
   console.log('is dark mode?', isDarkMode())
   changeThemeIcon()
@@ -83,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
   Array.from(selectionBox.querySelectorAll('li')).forEach(excoSetList => {
     excoSetList.addEventListener('click', () => {
       
-    excosList.forEach(e => {
+    excosList.forEach((e, index)=> {
       if(getIdNumber(excoSetList.id) === e.id){
         
         const checkSelectedList = document.getElementById(`check-${e.id}`)
@@ -95,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
           
         excosGrid.innerHTML = displayExcoSet(e.id)
         
-        executiveIntro.innerHTML = e.about
+        executiveIntro.innerHTML = `${e.name} is the ${showPosition(e.id)} elected Executives for the SUG Family, Federal University of Technology, Owerri`
         }
       })
       

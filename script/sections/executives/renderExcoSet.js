@@ -10,7 +10,7 @@ export function displayExcoSet( executivesSet) {
   
   excosList.forEach(excoSet => {
     if (excoSet.id === executivesSet){
-      excoSet.members.reverse().forEach(member => {
+      excoSet.members.forEach(member => {
   
         membersHTML += `
         <div class="executives-container max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-green-800/15 dark:border-gray-700">
@@ -18,7 +18,7 @@ export function displayExcoSet( executivesSet) {
               <img src=${member.image} alt="20250616-210243" border="0" class="w-full h-full object-cover touch-auto overflow-auto object-top">
           </div>
           <div class="block text-sm/6 font-medium text-gray-800 dark:text-gray-400">
-            Comr.
+            ${member.titles}
           </div>
           <div>
             <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">${member.name}</h5>
@@ -33,21 +33,14 @@ export function displayExcoSet( executivesSet) {
                   <span>
                     <span>Comr.</span>
                     <span>
-                      ${member.name}
+                      ${member.name},
                     </span> 
                   </span> 
-                  <span> , a 
-                    <span > ${member.level} </span> 
-                  </span> - 
                   <span>
-                  Software Engineering student, serves as the 
+                  served as the SUG
                   </span> 
                   <span> ${member.position} </span>
-                  <span> of the Association of Software Engineering Students(ASES),
-                    <span>
-                      Ascension Family
-                    </span>
-                    FUTO. 
+                  <span> under the ${excoSet.name} executives FUTO. 
                   </span> 
                   <span> 
                     ${member.role}. 
