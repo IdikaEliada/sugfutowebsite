@@ -49,7 +49,6 @@ export function displayExcoSet( executivesSet) {
               </span>
             </span>
             <span class="read-more-btn font-medium items-center text-green-600 hover:underlined-md cursor-pointer transition-colors duration-300 hover:bg-green-700 inline-flex text-xs/10 hidden" aria-expanded="false">
-              <i class="fas fa-external-link-alt"></i>
             </span>
           </p>
           <div class="inline-flex font-medium items-center text-green-600 hover:underline text-xl">

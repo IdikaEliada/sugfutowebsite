@@ -58,7 +58,7 @@ function getIdNumber(element) {
 }
 
 function showPosition(number){
-  lastDigit = Math.abs(number) % 10;
+  const lastDigit = Math.abs(number) % 10;
   
   if(lastDigit > 3){
     return `${number}th`
