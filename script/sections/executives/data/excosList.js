@@ -40,7 +40,7 @@ export const excosList = [{
     position: "Director of Information",
     about: "",
     role: "Passionate about driving innovation and research, ensuring the community stays ahead in the tech world.",
-    image: "https://i.ibb.co/placeholder-alajemba.png",
+    image: "https://i.ibb.co/cSPPH1K6/20251009-220855.jpg",
     titles: "Hon. Journ. High Comr.",
     id: {
       group: "SUGCORE",
