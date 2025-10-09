@@ -25,7 +25,7 @@ export const excosList = [{
       number: 2
     }
   }, {
-    name: "Opara Prince",
+    name: "Opara Prince Chukwuemeka",
     position: "Secretary General",
     about: "",
     role: "Diligent, organized, and committed to transparency, ensuring smooth communication and documentation within the association.",
@@ -36,15 +36,15 @@ export const excosList = [{
       number: 3
     }
   }, {
-    name: "Charles Princess",
-    position: "Treasurer",
+    name: "Alajemba Paul Uzochukwu",
+    position: "Director of Information",
     about: "",
-    role: "Committed to managing finances with care and transparency, ensuring the community thrives financially.",
-    image: "https://i.ibb.co/placeholder-charles.png",
-    titles: [["High Comr.", "Comr."]],
+    role: "Passionate about driving innovation and research, ensuring the community stays ahead in the tech world.",
+    image: "https://i.ibb.co/placeholder-alajemba.png",
+    titles: "Hon. Journ. High Comr.",
     id: {
       group: "SUGCORE",
-      number: 4
+      number: 10
     }
   }, {
     name: "Thunder Holy",
@@ -102,13 +102,12 @@ export const excosList = [{
       number: 9
     }
   }, {
-    name: "Alajemba Paul Uzochukwu",
-    position: "Director of ICT",
+    name: "Charles Princess",
+    position: "Treasurer",
     about: "",
-    role: "Passionate about driving innovation and research, ensuring the community stays ahead in the tech world.",
-    image: "https://i.ibb.co/placeholder-alajemba.png",
-    level: 200,
-    titles: [["Hon. Journ. High Comr.", "High Comr."]],
+    role: "Committed to managing finances with care and transparency, ensuring the community thrives financially.",
+    image: "https://i.ibb.co/placeholder-charles.png",
+    titles: [["High Comr.", "Comr."]],
     id: {
       group: "SUGCORE",
       number: 10
