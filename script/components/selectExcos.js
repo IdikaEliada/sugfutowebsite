@@ -13,7 +13,9 @@ export function renderList(){
       </div>
       
       <span class="absolute inset-y-0 right-0 flex items-center pr-4 text-green-800 dark:text-green-500" data-selected-set-checked = ${excoSet.id} id="check-${excoSet.id}">
-        
+        ${excoSet.id === 26 ? 
+          `<i class="fa fa-check" aria-hidden="true"></i>` : ''
+        }
       </span>
     </li>`
     

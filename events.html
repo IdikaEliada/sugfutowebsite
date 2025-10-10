@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <title></title>
+</head>
+
+<body>
+  <table id="eventsTable" class="display">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Description</th>
+      <th>Reviews</th>
+      <th>Host</th>
+      <th>Images</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<script src="script/sections/executives/data/events.js">
+  console.log(allSUGEvents)
+</script>
+<script>
+  $(document).ready(function () {
+  const table = $('#eventsTable').DataTable();
+  allSUGEvents.forEach(event => {
+    table.row.add([
+      event.name,
+      event.date.toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric', 
+        hour: 'numeric', 
+        minute: 'numeric' 
+      }),
+      event.location,
+      event.description,
+      event.reviews,
+      `${event.host.name} (${event.host.position})`,
+      event.images.join(', ')
+    ]).draw();
+  });
+});
+</script>
+</body>
+
+</html>

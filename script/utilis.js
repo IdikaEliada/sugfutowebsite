@@ -104,6 +104,10 @@ document.addEventListener('DOMContentLoaded', () => {
         
         checkSelectedList.innerHTML = `
           <i class="fa fa-check" aria-hidden="true"></i>`
+          
+        const uncheckSelectedList = document.querySelectorAll(`[id^="check-"]:not(#check-${e.id})`);
+
+        uncheckSelectedList.forEach(l => l.innerHTML = "")
         
         excosGrid.innerHTML = "";
           
