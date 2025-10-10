@@ -135,12 +135,12 @@ export const excosList = [{
 },{
   name: "Aluta Proclaim",
   id: 25,
-  about: "The 26th Elected SUG Executives for FUTO",
+  about: "The 25th Elected SUG Executives for FUTO",
   members: null
 },{
-  name,
+  name: 'Aluta Prestige',
   id: 24,
-  about: "",
+  about: "The 24th Elected SUG Executives for FUTO",
   members: null
 }
 ]
