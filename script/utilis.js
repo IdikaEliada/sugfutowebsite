@@ -91,7 +91,7 @@ selectExcos.addEventListener('click', ()=>{
 
 selectionBox.innerHTML = renderList();
 
-excosGrid.innerHTML = displayExcoSet(2)
+excosGrid.innerHTML = displayExcoSet(26)
 
 document.addEventListener('DOMContentLoaded', () => {
   Array.from(selectionBox.querySelectorAll('li')).forEach(excoSetList => {
