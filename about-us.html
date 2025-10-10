@@ -49,17 +49,43 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <style>
+      
     * {
       box-sizing: border-box;
     }
+    
+    body {
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+    
+    /* Fix text overflow */
+    main {
+      max-width: 100%;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+    
+    /* Ensure all text containers break properly */
+    section, div, p, blockquote {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+    
+    /* Fix the image container specifically */
+    .image-container {
+      max-width: 100%;
+      overflow: hidden;
+    }
   </style>
-  
+
   <link rel="stylesheet" href="styles.css">
   
   <title>ABOUT SUG FUTO</title>
 </head>
 
-<body style="font-family: 'Sora';" class="mx-5 mt-12 bg-[#eeeeee] dark:bg-[#111111] bg-cover bg-center bg-image dark:text-white relative pb-5">
+<body style="font-family: 'Sora';" class="px-5 mt-12 bg-[#eeeeee] dark:bg-[#111111] bg-cover bg-center bg-image dark:text-white relative pb-5 overflow-x-hidden max-w-[100vw]">
   
   <header class="z-3 fixed top-0 right-0 left-0 px-4 py-2 border-b-1 dark:border-black border-white backdrop-blur-sm flex justify-between" >
     <a href="index.html" class="flex items-center gap-2">
@@ -117,7 +143,7 @@
     </div>
   </header>
   
-  <main class="pt-2">
+  <main class="pt-2 max-w-full overflow-x-hidden">
     
     
     <!-- Breadcrumb -->
@@ -157,50 +183,193 @@
             <br />From advocating for better hostel conditions to organizing skill-building workshops, we are committed to fostering a vibrant, inclusive, and progressive academic community. As of October 2025, under the leadership of the newly elected 2025/2026 executive team, we continue to uphold the spirit of 'Aluta Continua, Victoria Acerta'—the struggle continues, and victory is certain.
           </div>
           
-      <div class="md:hidden flex bg-black overflow-hidden rounded position-relative min-w-[300px] md:w-[750px]" data-aos="zoom-in" data-aos-delay="200">
-        <img src="https://i.ibb.co/N6kkcH7y/20251009-215749.jpg" class="main-image swiper-slide" loading="lazy" 
-        />
-            <!--img src="https://i.ibb.co/bjSNLbZK/20251010-020850.jpg" class="main-image swiper-slide" loading="lazy" 
-            /-->
-      </div>
+
+          <div class="md:hidden flex bg-black overflow-hidden rounded relative w-full max-w-full" data-aos="zoom-in" data-aos-delay="200">
+            <img src="https://i.ibb.co/N6kkcH7y/20251009-215749.jpg" class="w-full h-auto object-cover max-w-full" loading="lazy" />
+          </div>
     </section>
     <!-- Hero Section -->
   
-    <section class="executives-section relative">
+    <section class="relative">
       <div class="sticky top-10 -mx-5 px-5 py-3 border-b-1 border-black/2 dark:border-white/2 backdrop-blur-md z-2">
-        <label id="listbox-label" class="block text-sm/6 font-medium text-gray-800 dark:text-gray-400">Meet our executive</label>
-        <div class="relative mt-2 text-gray-800 dark:text-gray-400">
-          <button type="button" class="cursor-default rounded-full dark:bg-green-800/25 bg-green-500/25 py-1.5 pr-3 pl-3 text-left outline-none sm:text-sm/6 inline-flex px-3 py-2 text-sm font-semibold shadow-xs dark:text-white text-black hover:bg-gray-50" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label" id="select-excos">
-            <span class="col-start-1 row-start-1 flex items-center gap-3 pr-6">
-              <span class="block truncate" id="selected-excos">Aluta Transformation</span>
-            </span>
-            <svg class="col-start-1 row-start-1 size-5 self-center justify-self-end sm:size-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
-              <path fill-rule="evenodd" d="M5.22 10.22a.75.75 0 0 1 1.06 0L8 11.94l1.72-1.72a.75.75 0 1 1 1.06 1.06l-2.25 2.25a.75.75 0 0 1-1.06 0l-2.25-2.25a.75.75 0 0 1 0-1.06ZM10.78 5.78a.75.75 0 0 1-1.06 0L8 4.06 6.28 5.78a.75.75 0 0 1-1.06-1.06l2.25-2.25a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd" />
-            </svg>
-          </button>
-      
-          <ul class="absolute hidden z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 dark:ring-white/5 focus:outline-hidden sm:text-sm bg-[#eeeeee] dark:bg-[#111111] " tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3" id="selection-box">
-          </ul>
-        </div>
+        <label class="block text-sm/6 font-medium text-gray-800 dark:text-gray-400">Our Mission and Vision</label>
       </div>
+      <div class="relative mt-2 text-gray-800 dark:text-gray-400">
+        <button type="button" class="cursor-default rounded-full dark:bg-green-800/25 bg-green-500/25 py-1.5 pr-3 pl-3 text-left outline-none sm:text-sm/6 inline-flex px-3 py-2 text-sm font-semibold shadow-xs dark:text-white text-black hover:bg-gray-50">
+          <span class="col-start-1 row-start-1 flex items-center gap-3">
+            <span class="block truncate">Mission</span>
+          </span>
+          
+        </button>
+      </div>
+      
       
       <div class="">
         <div class="">
-          <div class="md:text-xl py-4 col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4" id="executive-intro" data-aos="fade-left" data-aos-delay="300">
-            Aluta Transformation is the 26th elected Executives for the SUG Family, Federal University of Technology, Owerri 
+          <div class="md:text-xl py-4 col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4" data-aos="fade-left" data-aos-delay="300">
+            <blockquote
+        class="text-xl italic font-semibold text-[#111611] dark:text-white py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6"
+      >
+        <svg
+          class="w-8 h-8 text-gray-400 dark:text-gray-600 mb-4"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 18 14"
+        >
+          <path
+            d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"
+          />
+        </svg>
+        <p>
+          To empower FUTO students by advocating for their rights, enhancing their welfare, and providing opportunities for professional development, peer interaction, and practical skill acquisition. We strive to be the voice of every Futoite, ensuring their concerns shape the future of our university."
+        </p>
+       
+      </blockquote> 
           </div>
-          <div id="executive-set-container" class ="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 xl:grid-cols-4" data-aos="fade-up" data-aos-delay="300"></div>
+          
+
+        </div>
+      </div>
+      
+      <div class="relative mt-2 text-gray-800 dark:text-gray-400">
+          <button type="button" class="cursor-default rounded-full dark:bg-green-800/25 bg-green-500/25 py-1.5 pr-3 pl-3 text-left outline-none sm:text-sm/6 inline-flex px-3 py-2 text-sm font-semibold shadow-xs dark:text-white text-black hover:bg-gray-50">
+            <span class="col-start-1 row-start-1 flex items-center gap-3">
+              <span class="block truncate">Vision</span>
+            </span>
+            
+          </button>
+      
+          
+        </div>
+        
+        
+      <div class="">
+        <div class="">
+          <div class="md:text-xl py-4 col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4" data-aos="fade-left" data-aos-delay="300">
+            <blockquote
+              class="text-xl italic font-semibold text-[#111611] dark:text-white py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6"
+            >
+              <svg
+                class="w-8 h-8 text-gray-400 dark:text-gray-600 mb-4"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 18 14"
+              >
+                <path
+                  d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"
+                />
+              </svg>
+              <p>
+                To build a united FUTO community where every student thrives academically, socially, and professionally, driving transformative change that resonates beyond campus walls."
+              </p>
+             
+            </blockquote> 
+          </div>
+          
 
         </div>
       </div>
     </section>
+    
+    
+    
+    <section>
+      
+      <div class="border-b-1 border-green-50 dark:border-green-950 backdrop-blur-md flex gap-2 items-center  p-2 text-transparent bg-linear-65 from-green-500 to-green-800 [background-clip:text] [-webkit-background-clip:text] sticky top-14 font-bold" style="font-size: 12px">
+        Core Values
+      </div>
+      
+      <div id="default-carousel" class="relative w-full" data-carousel="slide">
+          <!-- Carousel wrapper -->
+          <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+               <!-- Item 1 -->
+              <div class="hidden duration-700 ease-in-out " data-carousel-item>
+                  
+                <a href="#" class="block max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-green-800/15 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Leadership:</h5>
+                <p class="font-normal text-gray-700 dark:text-gray-400">Nurturing future leaders through active participation and responsibility.</p>
+                </a>
+      
+              </div>
+              <!-- Item 2 -->
+              <div class="hidden duration-700 ease-in-out " data-carousel-item>
+                  
+                <a href="#" class="block max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-green-800/15 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Unity:</h5>
+                <p class="font-normal text-gray-700 dark:text-gray-400">Strengthening the bond among diverse Futoites for collective success.</p>
+                </a>
+      
+              </div>
+              <!-- Item 3 -->
+              <div class="hidden duration-700 ease-in-out " data-carousel-item>
+        
+                <a href="#" class="block max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-green-800/15 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Activism:</h5>
+                  <p class="font-normal text-gray-700 dark:text-gray-400">Championing justice, equity, and progress through peaceful advocacy.</p>
+                </a>
+                
+              </div>
+              <!-- Item 4 -->
+              <div class="hidden duration-700 ease-in-out " data-carousel-item>
+        
+                <a href="#" class="block max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-green-800/15 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Progress:</h5>
+                  <p class="font-normal text-gray-700 dark:text-gray-400"> Innovating and adapting to meet the evolving needs of students.</p>
+                </a>
+                
+              </div>
+              <!-- Item 5 -->
+              <div class="hidden duration-700 ease-in-out " data-carousel-item>
+        
+                <a href="#" class="block max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-green-800/15 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Integrity:</h5>
+                  <p class="font-normal text-gray-700 dark:text-gray-400">Upholding honesty, transparency, and accountability in all SUG actions.</p>
+                </a>
+                
+              </div>
+          </div>
+          <!-- Slider indicators -->
+          <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+              <button type="button" class="w-3 h-3 rounded-full bg-black aria-current:bg-green-500" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+              <button type="button" class="w-3 h-3 rounded-full bg-black aria-current:bg-green-500" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+              <button type="button" class="w-3 h-3 rounded-full bg-black aria-current:bg-green-500" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+              <button type="button" class="w-3 h-3 bg-black rounded-full aria-current:bg-green-500" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+              <button type="button" class="w-3 h-3 bg-black rounded-full aria-current:bg-green-500" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+          </div>
+          <!-- Slider controls -->
+          <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800/30 group-hover:bg-white/75 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                  <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                  </svg>
+                  <span class="sr-only">Previous</span>
+              </span>
+          </button>
+          <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                  <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                  </svg>
+                  <span class="sr-only">Next</span>
+              </span>
+          </button>
+      </div>
 
-  </main>
+    </section>
+</main>
   
   
   <div class="fixed z-4 top-0 bottom-0 left-0 right-0 flex items-center justify-center" id="preloader">
     <div class="loader"></div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
   <script src="script/utilis.js" type="module"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
