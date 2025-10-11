@@ -7,6 +7,10 @@ export function renderList(){
   selectionBoxHTML += `
     <li class="relative cursor-default py-2 pr-9 pl-3 select-none" id="listbox-option-${excoSet.id}" role="option">
       <div class="flex items-center">
+        <div class="flex justify-center items-center">
+          <img src=${excoSet.logo != null ? excoSet.logo : `images/aluta_logo.png`} class="w-5 h-5 object-contain"
+          />
+        </div>
         <span class="ml-3 block truncate font-normal">
           ${excoSet.name}
         </span>

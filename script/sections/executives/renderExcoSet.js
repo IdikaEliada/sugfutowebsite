@@ -13,10 +13,13 @@ export function displayExcoSet( executivesSet) {
     if (excoSet.id === executivesSet){
       
       if(!excoSet.members || excoSet.members === null){
-        console.log(excoSet)
         
         membersHTML += `
-        <div class="flex-1 justify-center align-center max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-green-800/15 dark:border-gray-700">
+        <div class="flex-1 justify-center align-center max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-green-800/15 dark:border-gray-700 text-center">
+          <div class="executive-detail-container">
+            <img src=${excoSet.logo != null? excoSet.logo : `images/aluta_logo.png`} alt="20250616-210243" border="0" class="w-full h-full object-cover touch-auto overflow-auto object-top" loading='lazy' 
+            />
+          </div>
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">No Data Found</h5>
             <p class="font-normal text-gray-700 dark:text-gray-400">The executives data is still being uploaded.
             </p>
@@ -29,7 +32,8 @@ export function displayExcoSet( executivesSet) {
           membersHTML += `
           <div class="executives-container max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-green-800/15 dark:border-gray-700">
             <div class="executive-detail-container flower bg-linear-30 from-green-500 to-green-800 animate-spin">
-                <img src=${member.image} alt="20250616-210243" border="0" class="w-full h-full object-cover touch-auto overflow-auto object-top" loading='lazy'>
+                <img src=${member.image != null? member.image : excoSet.logo} alt="20250616-210243" border="0" class="w-full h-full object-cover touch-auto overflow-auto object-top" loading='lazy' 
+                />
             </div>
             <div class="block text-sm/6 font-medium text-gray-800 dark:text-gray-400">
               ${member.titles}

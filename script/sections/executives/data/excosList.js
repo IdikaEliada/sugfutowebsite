@@ -1,12 +1,17 @@
+import setEvent from './events.js';
+
 export const excosList = [{
   name: "Aluta Solution",
   id: 27,
   about: "The 27th Elected SUG Executives for FUTO",
-  members: null
+  logo: null,
+  members: null,
+  events: setEvent(27)
  },{
   name: "Aluta Transformation",
   id: 26,
   about: "The 26th Elected SUG Executives for FUTO",
+  logo: "https://i.ibb.co/xKKvmFxb/20251011-083515.png",
   members: [{
     name: "Ogbonna Blessed",
     position: "President",
@@ -123,7 +128,7 @@ export const excosList = [{
     position: "Assistant Secretary General",
     about: "",
     role: " ",
-    image: "https://i.ibb.co/placeholder-anita.png",
+    image: null,
     level: 200,
     titles: "High Comr.",
     id: {
@@ -131,16 +136,21 @@ export const excosList = [{
       number: 11
     }
 
-  }]
+  }],
+  events: setEvent(26)
 },{
   name: "Aluta Proclaim",
   id: 25,
   about: "The 25th Elected SUG Executives for FUTO",
-  members: null
+  logo: null,
+  members: null,
+  events: null
 },{
-  name: 'Aluta Prestige',
+  name: 'Aluta Legacy',
   id: 24,
   about: "The 24th Elected SUG Executives for FUTO",
-  members: null
+  logo: null,
+  members: null,
+  events: null
 }
 ]

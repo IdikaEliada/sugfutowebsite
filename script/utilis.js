@@ -4,9 +4,13 @@ import {excosList} from './sections/executives/data/excosList.js'
 
 import {displayExcoSet} from './sections/executives/renderExcoSet.js';
 
+import loadingAnimation from './libs/loadingImg.js';
+
 import {setupReadMore} from './sections/executives/about-exco.js'
 
 const selectionBox = document.getElementById('selection-box');
+
+const images = '.loading-image'
 
 const executiveIntro= document.getElementById('executive-intro');
 
@@ -34,6 +38,7 @@ menuIcon.addEventListener('click', ()=>{
 })
 
 loadPage(preloader)
+loadingAnimation(images)
 
 const HTML = document.querySelector('html')
 
@@ -95,12 +100,14 @@ excosGrid.innerHTML = displayExcoSet(26)
 
 document.addEventListener('DOMContentLoaded', () => {
   Array.from(selectionBox.querySelectorAll('li')).forEach(excoSetList => {
+    
     excoSetList.addEventListener('click', () => {
       
     excosList.forEach((e, index)=> {
       if(getIdNumber(excoSetList.id) === e.id){
         
         const checkSelectedList = document.getElementById(`check-${e.id}`)
+        
         
         checkSelectedList.innerHTML = `
           <i class="fa fa-check" aria-hidden="true"></i>`
@@ -115,9 +122,18 @@ document.addEventListener('DOMContentLoaded', () => {
         
         executiveIntro.innerHTML = `${e.name} is the ${showPosition(e.id)} elected Executives for the SUG Family, Federal University of Technology, Owerri`
         }
+        
+        selectedExcoSpan.innerHTML = `<div class="flex justify-center items-center gap-2">
+          <div class="flex justify-center items-center">
+            <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M10.271 5.575C8.967 4.501 7 5.43 7 7.12v9.762c0 1.69 1.967 2.618 3.271 1.544l5.927-4.881a2 2 0 0 0 0-3.088l-5.927-4.88Z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          ${excoSetList.textContent}
+        </div>`
       })
       
-      selectedExcoSpan.innerHTML = excoSetList.textContent
+      
       
       excosDropDownList.classList.toggle('hidden')
       
@@ -125,6 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {
       
     })
   })
+  
+  
 })
 
 export default function loadPage() {
