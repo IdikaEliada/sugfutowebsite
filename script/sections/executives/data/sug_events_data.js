@@ -840,3 +840,4 @@ export const allSUGEvents = [
     images: ["pr-powerup.jpg"]
   }
 ];
+
