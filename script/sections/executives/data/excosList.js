@@ -4,7 +4,7 @@ export const excosList = [{
   name: "Aluta Solution",
   id: 27,
   about: "The 27th Elected SUG Executives for FUTO",
-  logo: null,
+  logo: "https://i.ibb.co/WWmX9221/20251012-173114.png",
   members: null,
   events: setEvent(27)
  },{

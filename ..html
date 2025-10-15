@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FUTO SUG Header</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
+</head>
+<body class="bg-white dark:bg-gray-900">
+  
+  <header class="z-50 fixed top-0 right-0 left-0 px-4 py-2 border-b border-gray-200 dark:border-gray-800 backdrop-blur-sm flex justify-between bg-white/80 dark:bg-gray-900/80">
+    <a href="index.html" class="flex items-center gap-2">
+      <img src="https://i.ibb.co/MxBKdRnL/20251009-224316.png" class="w-8 h-8" alt="SUG FUTO Logo" loading="eager">
+      <span class="font-bold text-xl text-gray-900 dark:text-white">
+        <span class="md:hidden">FUTO SUG</span>
+        <span class="hidden md:inline font-normal">Student Union Government</span>
+      </span>
+    </a>
+
+    <div class="relative">
+      <button 
+        id="dropdownButton" 
+        data-dropdown-toggle="dropdown" 
+        class="flex justify-center items-center rounded-full bg-transparent px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 w-8 h-8 transition-colors" 
+        type="button"
+        aria-expanded="false"
+        aria-haspopup="true">
+        <i class="fa fa-bars text-gray-900 dark:text-white" aria-hidden="true" id="menu-icon"></i>
+      </button>
+      
+      <!-- Dropdown menu -->
+      <div 
+        id="dropdown" 
+        class="z-10 hidden absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-400 shadow-lg ring-1 ring-black/5 backdrop-blur-sm">
+        <div class="py-1" role="menu">
+          
+          <a href="index.html" class="block px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" role="menuitem">
+            <div class="flex items-center gap-2">
+              <div class="flex justify-center items-center rounded-full px-3 py-2 w-1 h-4">
+                <i class='fa fa-home fa-solid text-xs'></i>
+              </div>
+              <span>Home</span>
+            </div>
+          </a>
+          
+          <a href="about-us.html" class="block px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" role="menuitem">
+            <div class="flex items-center gap-2">
+              <div class="flex justify-center items-center rounded-full px-3 py-2 w-1 h-4">
+                <i class='fa fa-circle-info fa-solid text-xs'></i>
+              </div>
+              <span>About Us</span>
+            </div>
+          </a>
+          
+          <a href="achievements.html" class="block px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" role="menuitem">
+            <div class="flex items-center gap-2">
+              <div class="flex justify-center items-center rounded-full px-3 py-2 w-1 h-4">
+                <i class='fa-solid fa-star text-xs'></i>
+              </div>
+              <span>Achievements</span>
+            </div>
+          </a>
+          
+          <a href="index.html#faq" class="block px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" role="menuitem">
+            <div class="flex items-center gap-2">
+              <div class="flex justify-center items-center rounded-full px-3 py-2 w-1 h-4">
+                <i class='fa-solid fa-circle-question text-xs'></i>
+              </div>
+              <span>FAQs</span>
+            </div>
+          </a>
+          
+          <button id="theme-toggle" class="block w-full px-4 py-2 text-sm text-left hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" role="menuitem">
+            <div class="flex items-center gap-2">
+              <div class="shadow-sm ring-1 ring-white dark:ring-black ring-inset flex justify-center items-center rounded-full bg-green-800 dark:bg-green-500 px-3 py-2 w-1 h-4">
+                <i class='fas fa-moon fa-solid text-white dark:text-black text-[8px]' id="theme-icon"></i>
+              </div>
+              <span>
+                <span class="dark:hidden">Light Mode</span>
+                <span class="hidden dark:inline">Dark Mode</span>
+              </span>
+            </div>
+          </button>
+          
+          <div class="border-t border-gray-300 dark:border-gray-600 my-1"></div>
+          
+          <form method="POST" action="#" role="none">
+            <button type="submit" class="block w-full px-4 py-2 text-left text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" role="menuitem">
+              Sign out
+            </button>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dummy content to show header behavior -->
+  <div class="pt-20 p-8">
+    <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">FUTO SUG Website</h1>
+    <p class="text-gray-700 dark:text-gray-300">This header uses Flowbite for dropdown functionality while maintaining your custom styling.</p>
+  </div>
+
+  <script>
+    // ============================================
+    // THEME TOGGLE FUNCTIONALITY
+    // ============================================
+    
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const htmlElement = document.documentElement;
+
+    /**
+     * Check if user's system prefers dark mode
+     * @returns {boolean}
+     */
+    function isDarkMode() {
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    /**
+     * Apply theme to the document
+     * @param {string} theme - 'light' or 'dark'
+     */
+    function setTheme(theme) {
+      if (theme === 'dark') {
+        htmlElement.classList.add('dark');
+        htmlElement.dataset.theme = 'dark';
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        console.log('Theme switched to: Dark Mode');
+      } else {
+        htmlElement.classList.remove('dark');
+        htmlElement.dataset.theme = 'light';
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+        console.log('Theme switched to: Light Mode');
+      }
+      // Save theme preference to localStorage
+      localStorage.setItem('color-theme', theme);
+    }
+
+    /**
+     * Get current theme
+     * @returns {string} 'light' or 'dark'
+     */
+    function getCurrentTheme() {
+      return htmlElement.classList.contains('dark') ? 'dark' : 'light';
+    }
+
+    /**
+     * Toggle between light and dark mode
+     */
+    function toggleTheme() {
+      const currentTheme = getCurrentTheme();
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      setTheme(newTheme);
+      
+      // Optional: Add smooth transition effect
+      htmlElement.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+      setTimeout(() => {
+        htmlElement.style.transition = '';
+      }, 300);
+    }
+
+    /**
+     * Initialize theme on page load
+     */
+    function initTheme() {
+      // Check for saved theme preference
+      const savedTheme = localStorage.getItem('color-theme');
+      
+      if (savedTheme) {
+        // Use saved preference
+        setTheme(savedTheme);
+      } else if (isDarkMode()) {
+        // Use system preference
+        setTheme('dark');
+      } else {
+        // Default to light mode
+        setTheme('light');
+      }
+    }
+
+    // Event listener for theme toggle button
+    themeToggleBtn.addEventListener('click', toggleTheme);
+
+    // Initialize theme on load
+    initTheme();
+
+    // Listen for system theme changes (only if user hasn't set a preference)
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('color-theme')) {
+        setTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+
+    // ============================================
+    // MENU ICON TOGGLE
+    // ============================================
+    
+    const menuIcon = document.getElementById('menu-icon');
+    const dropdownButton = document.getElementById('dropdownButton');
+    
+    dropdownButton.addEventListener('click', () => {
+      setTimeout(() => {
+        const isOpen = !document.getElementById('dropdown').classList.contains('hidden');
+        if (isOpen) {
+          menuIcon.classList.remove('fa-bars');
+          menuIcon.classList.add('fa-close');
+        } else {
+          menuIcon.classList.remove('fa-close');
+          menuIcon.classList.add('fa-bars');
+        }
+      }, 10);
+    });
+
+    // ============================================
+    // EXPORT FOR USE IN OTHER FILES
+    // ============================================
+    
+    // Make theme functions available globally
+    window.themeManager = {
+      toggle: toggleTheme,
+      setTheme: setTheme,
+      getCurrentTheme: getCurrentTheme,
+      isDarkMode: () => getCurrentTheme() === 'dark'
+    };
+  </script>
+
+</body>
+</html>

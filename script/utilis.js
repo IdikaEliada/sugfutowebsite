@@ -30,6 +30,8 @@ const selectExcos = document.getElementById('select-excos')
 
 const excosGrid = document.getElementById('executive-set-container')
 
+const dropdownButton = document.getElementById('dropdownButton');
+
 menuIcon.addEventListener('click', ()=>{
   if(isMenuOpen){
     menuIcon.classList.toggle('fa-bars')
@@ -82,13 +84,6 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () 
   systemDefault()
 });
 
-const menuButton = document.getElementById('menu-button')
-const dropdown = document.getElementById('dropdown')
-
-menuButton.addEventListener('click', ()=>{
-  dropdown.classList.toggle('hidden')
-})
-
 
 selectExcos.addEventListener('click', ()=>{
   excosDropDownList.classList.toggle('hidden')
@@ -97,6 +92,64 @@ selectExcos.addEventListener('click', ()=>{
 selectionBox.innerHTML = renderList();
 
 excosGrid.innerHTML = displayExcoSet(26)
+
+// const menuIcon = document.getElementById('menu-icon');
+    
+    const dropdown = document.getElementById('dropdown');
+    
+    /**
+     * Update menu icon based on dropdown state
+     */
+    function updateMenuIcon() {
+      const isOpen = !dropdown.classList.contains('hidden');
+      if (isOpen) {
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-close');
+      } else {
+        menuIcon.classList.remove('fa-close');
+        menuIcon.classList.add('fa-bars');
+      }
+    }
+    
+    // Update icon when dropdown is toggled
+    dropdownButton.addEventListener('click', () => {
+      setTimeout(updateMenuIcon, 10);
+    });
+    
+    /**
+     * Close dropdown when clicking outside
+     */
+    function handleClickOutside(event) {
+      const isClickInsideDropdown = dropdown.contains(event.target);
+      const isClickOnButton = dropdownButton.contains(event.target);
+      const isOpen = !dropdown.classList.contains('hidden');
+      
+      // If click is outside dropdown and button, and dropdown is open, close it
+      if (!isClickInsideDropdown && !isClickOnButton && isOpen) {
+        dropdown.classList.add('hidden');
+        updateMenuIcon();
+      }
+    }
+    
+    // Wait for DOM to be fully loaded before attaching event listener
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('click', handleClickOutside);
+      });
+    } else {
+      document.addEventListener('click', handleClickOutside);
+    }
+    
+    // Also update icon when Flowbite toggles the dropdown
+    const observer = new MutationObserver(() => {
+      updateMenuIcon();
+    });
+    
+    observer.observe(dropdown, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
 
 document.addEventListener('DOMContentLoaded', () => {
   Array.from(selectionBox.querySelectorAll('li')).forEach(excoSetList => {
