@@ -85,13 +85,15 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () 
 });
 
 
-selectExcos.addEventListener('click', ()=>{
+if(selectExcos){
+  selectExcos.addEventListener('click', ()=>{
   excosDropDownList.classList.toggle('hidden')
 })
 
-selectionBox.innerHTML = renderList();
+  selectionBox.innerHTML = renderList();
 
-excosGrid.innerHTML = displayExcoSet(26)
+  excosGrid.innerHTML = displayExcoSet(26)
+}
 
 // const menuIcon = document.getElementById('menu-icon');
     
@@ -152,50 +154,49 @@ excosGrid.innerHTML = displayExcoSet(26)
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  Array.from(selectionBox.querySelectorAll('li')).forEach(excoSetList => {
-    
-    excoSetList.addEventListener('click', () => {
+  if(selectionBox)
+    Array.from(selectionBox.querySelectorAll('li')).forEach(excoSetList => {
       
-    excosList.forEach((e, index)=> {
-      if(getIdNumber(excoSetList.id) === e.id){
+      excoSetList.addEventListener('click', () => {
         
-        const checkSelectedList = document.getElementById(`check-${e.id}`)
-        
-        
-        checkSelectedList.innerHTML = `
-          <i class="fa fa-check" aria-hidden="true"></i>`
+      excosList.forEach((e, index)=> {
+        if(getIdNumber(excoSetList.id) === e.id){
           
-        const uncheckSelectedList = document.querySelectorAll(`[id^="check-"]:not(#check-${e.id})`);
-
-        uncheckSelectedList.forEach(l => l.innerHTML = "")
-        
-        excosGrid.innerHTML = "";
+          const checkSelectedList = document.getElementById(`check-${e.id}`)
           
-        excosGrid.innerHTML = displayExcoSet(e.id)
+          
+          checkSelectedList.innerHTML = `
+            <i class="fa fa-check" aria-hidden="true"></i>`
+            
+          const uncheckSelectedList = document.querySelectorAll(`[id^="check-"]:not(#check-${e.id})`);
+  
+          uncheckSelectedList.forEach(l => l.innerHTML = "")
+          
+          excosGrid.innerHTML = "";
+            
+          excosGrid.innerHTML = displayExcoSet(e.id)
+          
+          executiveIntro.innerHTML = `${e.name} is the ${showPosition(e.id)} elected Executives for the SUG Family, Federal University of Technology, Owerri`
+          }
+          
+          selectedExcoSpan.innerHTML = `<div class="flex justify-center items-center gap-2">
+            <div class="flex justify-center items-center">
+              <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M10.271 5.575C8.967 4.501 7 5.43 7 7.12v9.762c0 1.69 1.967 2.618 3.271 1.544l5.927-4.881a2 2 0 0 0 0-3.088l-5.927-4.88Z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            ${excoSetList.textContent}
+          </div>`
+        })
         
-        executiveIntro.innerHTML = `${e.name} is the ${showPosition(e.id)} elected Executives for the SUG Family, Federal University of Technology, Owerri`
-        }
         
-        selectedExcoSpan.innerHTML = `<div class="flex justify-center items-center gap-2">
-          <div class="flex justify-center items-center">
-            <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path fill-rule="evenodd" d="M10.271 5.575C8.967 4.501 7 5.43 7 7.12v9.762c0 1.69 1.967 2.618 3.271 1.544l5.927-4.881a2 2 0 0 0 0-3.088l-5.927-4.88Z" clip-rule="evenodd"/>
-            </svg>
-          </div>
-          ${excoSetList.textContent}
-        </div>`
+        
+        excosDropDownList.classList.toggle('hidden')
+        
+        setupReadMore(excosGrid)
+        
       })
-      
-      
-      
-      excosDropDownList.classList.toggle('hidden')
-      
-      setupReadMore(excosGrid)
-      
     })
-  })
-  
-  
 })
 
 export default function loadPage() {

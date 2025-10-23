@@ -17,7 +17,7 @@ export function setupReadMore(target) {
         readMoreBtnPosition: 'after', // Position the button after the text
         readMoreBtnTag: 'button', // Use button tag
         readMoreBtnSelectorClass: 'read-more-btn', // Use existing button class
-        readMoreBtnAdditionalClasses: 'font-medium items-center text-green-600 hover:underlined-md cursor-pointer transition-colors duration-300 hover:bg-green-700 inline-flex text-xs/10 hidden',
+        readMoreBtnAdditionalClasses: 'font-medium items-center hover:underlined-md cursor-pointer transition-colors duration-300 hover:bg-gray-700 inline-flex text-[0.55rem]/10 hidden',
         title: false // No title attribute
       });
 
