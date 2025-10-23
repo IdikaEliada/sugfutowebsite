@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <title>PROs Directory</title>
+</head>
+
+<body>
+  <table id="prosTable" class="display">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Position</th>
+        <th>Status</th>
+        <th>Handover Time</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="script/sections/executives/data/pros_data.js"></script>
+  <script>
+    $(document).ready(function () {
+      const table = $('#prosTable').DataTable({
+        order: [[0, 'asc']], // Sort by number column
+        pageLength: 25
+      });
+      
+      allPROs.forEach(pro => {
+        table.row.add([
+          pro.number,
+          pro.name,
+          pro.department || 'N/A',
+          pro.position,
+          pro.status,
+          pro.handoverTime || 'N/A'
+        ]).draw();
+      });
+    });
+  </script>
+</body>
+
+</html>
