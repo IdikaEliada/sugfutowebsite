@@ -4,6 +4,8 @@ import {excosList} from './sections/executives/data/excosList.js'
 
 import {displayExcoSet} from './sections/executives/renderExcoSet.js';
 
+import displayExcoSocials from './sections/socials/header.js';
+
 import loadingAnimation from './libs/loadingImg.js';
 
 import {setupReadMore} from './sections/executives/about-exco.js'
@@ -29,6 +31,8 @@ const excosDropDownList = document.getElementById('selection-box')
 const selectExcos = document.getElementById('select-excos')
 
 const excosGrid = document.getElementById('executive-set-container')
+
+const excosSocials = document.getElementById('socials-header')
 
 const dropdownButton = document.getElementById('dropdownButton');
 
@@ -93,7 +97,8 @@ if(selectExcos){
   selectionBox.innerHTML = renderList();
 
   excosGrid.innerHTML = displayExcoSet(27)
-}
+  
+} 
 
 // const menuIcon = document.getElementById('menu-icon');
     
@@ -197,6 +202,10 @@ document.addEventListener('DOMContentLoaded', () => {
         
       })
     })
+    
+  if (excosSocials) {
+    excosSocials.innerHTML = displayExcoSocials(27)
+    }
 })
 
 export default function loadPage() {
