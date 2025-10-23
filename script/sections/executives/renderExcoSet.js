@@ -15,7 +15,7 @@ export function displayExcoSet( executivesSet) {
       if(!excoSet.members || excoSet.members === null){
         
         membersHTML += `
-        <div class="flex-1 justify-center align-center max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-green-800/15 dark:border-gray-700 text-center">
+        <div class="flex-1 justify-center align-center max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700 text-center">
           <div class="executive-detail-container">
             <img src=${excoSet.logo != null? excoSet.logo : `images/aluta_logo.png`} alt="20250616-210243" border="0" class="w-full h-full object-cover touch-auto overflow-auto object-top" loading='lazy' 
             />
@@ -30,8 +30,8 @@ export function displayExcoSet( executivesSet) {
         excoSet.members.forEach(member => {
     
           membersHTML += `
-          <div class="executives-container max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-green-800/15 dark:border-gray-700">
-            <div class="executive-detail-container flower bg-linear-30 from-green-500 to-green-800 animate-spin">
+          <div class="executives-container max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700">
+            <div class="executive-detail-container flower bg-linear-30 from-${excoSet.color}-500 to-${excoSet.color}-800 animate-spin">
                 <img src=${member.image != null? member.image : excoSet.logo} alt="20250616-210243" border="0" class="w-full h-full object-cover touch-auto overflow-auto object-top" loading='lazy' 
                 />
             </div>
@@ -66,10 +66,10 @@ export function displayExcoSet( executivesSet) {
                   </span>
                 </span>
               </span>
-              <span class="read-more-btn font-medium items-center text-green-600 hover:underlined-md cursor-pointer transition-colors duration-300 hover:bg-green-700 inline-flex text-xs/10 hidden" aria-expanded="false">
+              <span class="read-more-btn font-medium items-center text-${excoSet.color}-600 hover:underlined-md cursor-pointer transition-colors duration-300 hover:bg-${excoSet.color}-700 inline-flex text-xs/10 hidden" aria-expanded="false">
               </span>
             </p>
-            <div class="inline-flex font-medium items-center text-green-600 hover:underline text-xl">
+            <div class="inline-flex font-medium items-center text-${excoSet.color}-600 hover:underline text-xl">
               ${member.position}
             </div>
           </div>`

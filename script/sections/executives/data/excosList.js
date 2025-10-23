@@ -147,7 +147,7 @@ export const excosList = [{
   id: 26,
   about: "The 26th Elected SUG Executives for FUTO",
   logo: "https://i.ibb.co/xKKvmFxb/20251011-083515.png",
-  color: 'blue',
+  color: 'green',
   members: [{
     name: "Ogbonna Blessed",
     position: "President",
@@ -279,6 +279,7 @@ export const excosList = [{
   id: 25,
   about: "The 25th Elected SUG Executives for FUTO",
   logo: null,
+  color: 'red',
   members: null,
   events: null
 },{
