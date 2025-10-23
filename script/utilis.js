@@ -92,7 +92,7 @@ if(selectExcos){
 
   selectionBox.innerHTML = renderList();
 
-  excosGrid.innerHTML = displayExcoSet(26)
+  excosGrid.innerHTML = displayExcoSet(27)
 }
 
 // const menuIcon = document.getElementById('menu-icon');

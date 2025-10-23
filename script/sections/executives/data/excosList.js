@@ -11,7 +11,7 @@ export const excosList = [{
     position: "President",
     about: "Leading with vision, excellence, and innovation — ",
     role: "Dedicated to progress, unity, and effective leadership, representing the voice and interest of all students as the President of the Aluta Solution Executives.",
-    image: null,
+    image: "https://i.ibb.co/LzWF0nvL/IMG-20251023-WA0085.jpg",
     titles: "HE. Bar. Hon. High Comr",
     id: {
       group: "SUGCORE",
@@ -22,7 +22,7 @@ export const excosList = [{
     position: "Vice President",
     about: "A passionate advocate for students welfare, bringing vision, energy, and a collaborative spirit to the executive council. ",
     role: "Her leadership is focused on inclusion, unity, and growth.",
-    image: null,
+    image: "https://i.ibb.co/bjLrVLRD/IMG-20251023-WA0093.jpg",
     titles: "HE. High Comr.",
     id: {
       group: "SUGCORE",
@@ -33,7 +33,7 @@ export const excosList = [{
     position: "Secretary General",
     about: "Diligent, organized, and committed to transparency, ensuring smooth communication and documentation within the association.",
     role: "He is hardworking and thorough, consistently putting in the effort to complete tasks accurately and on time.",
-    image: null,
+    image: "https://i.ibb.co/Z6T9FdbP/IMG-20251023-WA0089.jpg",
     titles: "Hon. Barr. High Comr.",
     id: {
       group: "SUGCORE",
@@ -44,7 +44,7 @@ export const excosList = [{
     position: "Director of Information",
     about: "Passionate about driving innovation and research, ensuring the community stays ahead on current happenings and relevant information",
     role: "",
-    image: null,
+    image: "https://i.ibb.co/zHn8rKG6/IMG-20251023-WA0095.jpg",
     titles: "Hon. Journ. High Comr.",
     id: {
       group: "SUGCORE",
@@ -55,7 +55,7 @@ export const excosList = [{
     position: "Director of Welfare",
     about: "",
     role: "Dedicated to ensuring the well-being of the community, making sure every student feels supported and valued.",
-    image: null,
+    image: "https://i.ibb.co/1Gn0D09C/IMG-20251023-WA0091.jpg",
     titles: "High Comr.",
     id: {
       group: "SUGCORE",
@@ -66,7 +66,7 @@ export const excosList = [{
     position: "Director of Sports",
     about: "",
     role: "Passionate about bringing energy and teamwork to the community through exciting sports initiatives.",
-    image: null,
+    image: "https://i.ibb.co/HTHQj845/IMG-20251023-WA0094.jpg",
     titles: "High Comr.",
     id: {
       group: "SUGCORE",
@@ -77,7 +77,7 @@ export const excosList = [{
     position: "Director of Socials",
     about: "",
     role: "The creative mind behind social events and student engagement, ensuring fun meets purpose in every gathering.",
-    image: null,
+    image: "https://i.ibb.co/MxW5R6bL/IMG-20251023-WA0090.jpg",
     titles: "High Comr.",
     id: {
       group: "SUGCORE",
@@ -88,7 +88,7 @@ export const excosList = [{
     position: "Director of Transport",
     about: "Staying in the loop and keeping everyone connected!",
     role: "Dedicated to keeping the community informed and connected with the latest updates and opportunities.",
-    image: null,
+    image: "https://i.ibb.co/wZKfZcbN/IMG-20251023-WA0086.jpg",
     titles: "Hon. High Comr.",
     id: {
       group: "SUGCORE",
@@ -99,7 +99,7 @@ export const excosList = [{
     position: "Financial Secretary",
     about: "",
     role: "Committed to managing funds with precision and supporting the community's growth.",
-    image: null,
+    image: "https://i.ibb.co/dwkGqK44/IMG-20251023-WA0088.jpg",
     titles: "High Comr.",
     id: {
       group: "SUGCORE",
@@ -110,7 +110,7 @@ export const excosList = [{
     position: "Treasurer",
     about: "",
     role: "Committed to managing finances with care and transparency, ensuring the community thrives financially.",
-    image: null,
+    image: "https://i.ibb.co/B5SYkhfb/IMG-20251023-WA0078.jpg",
     titles: "High Comr.",
     id: {
       group: "SUGCORE",
@@ -129,11 +129,11 @@ export const excosList = [{
       number: 11
     }
   }, {
-    name: "",
+    name: "Ezichi Franklyn Osugiri-Iro",
     position: "Director of Health ",
     about: "",
     role: "",
-    image: null,
+    image: "https://i.ibb.co/YFSyRd4c/IMG-20251023-WA0092.jpg",
     titles: "High Comr.",
     id: {
       group: "SUGCORE",
