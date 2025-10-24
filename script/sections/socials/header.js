@@ -18,7 +18,7 @@ export default function displayExcoSocials( executivesSet) {
         <div iclass="rounded-full shadow-lg">
           <img class="w-36 h-36 mb-3 loading-image" data-src="images/aluta_logo.png" src=${excoSet.logo} class="" alt="aluta logo"/>
         </div>
-          <h5 class="mb-1 text-3xl font-medium text-${excoSet.color}-700 dark:text-${excoSet.color}-600">${excoSet.name}</h5>
+          <h5 class="mb-1 text-3xl font-medium text-${excoSet.color}-700 dark:text-${excoSet.color}-600 text-center">${excoSet.name}</h5>
           <span class="text-xs text-gray-500 dark:text-gray-400">STUDENT UNION GOVERNMENT, FUTO</span>
           <div class="flex justify-center items-center mt-4 md:mt-6">
             <div class="inline-flex px-2 gap-2">
