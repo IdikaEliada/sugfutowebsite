@@ -122,7 +122,7 @@ export const excosList = [{
     position: "Assistant Secretary General",
     about: "",
     role: " ",
-    image: null,
+    image: "https://i.ibb.co/M5g1mc4p/IMG-20251025-WA0074-1.jpg",
     titles: "High Comr.",
     id: {
       group: "SUGCORE",
