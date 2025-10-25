@@ -13,9 +13,9 @@ export function displayExcoSet( executivesSet) {
     if (excoSet.id === executivesSet){
       
       if(!excoSet.members || excoSet.members === null){
-        
-        membersHTML += `
-        <div class="flex-1 justify-center align-center max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700 text-center">
+        (!excoSet.group || excoSet.group === null) ?
+          membersHTML += `
+          <div class="flex-1 justify-center align-center max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700 text-center">
           <div class="executive-detail-container">
             <img src=${excoSet.logo != null? excoSet.logo : `images/aluta_logo.png`} alt="20250616-210243" border="0" class="w-full h-full object-cover touch-auto overflow-auto object-top" loading='lazy' 
             />
@@ -25,6 +25,25 @@ export function displayExcoSet( executivesSet) {
             </p>
           </div>
         </div>`
+        : 
+        membersHTML += `
+        <div class="flex flex-col max-w-sm bg-red/15 border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800/15 dark:border-gray-700  w-full backdrop-blur-sm">
+        <div class="max-h-42 overflow-hidden">
+          <img src=${excoSet.group.image}
+          class="rounded-tr-lg"
+          loading="lazy"/>
+        </div>
+        <div class="p-4">
+        <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">${excoSet.name} Executives</h5>
+          <div class="font-medium text-xl">${excoSet.about}. ${excoSet.name} executives were the FUTO SUG executives  20${excoSet.id -2}/20${excoSet.id -1}</div>
+          <div class="inline-flex flex-col pt-2 font-medium items-start hover:underline text-sm">
+            <span>Led By:</span>
+            <span class="text-${excoSet.color}-600">
+              ${excoSet.group.president}
+            </span>
+          </div>
+        </div>
+      </div>`
       } else {
       
         excoSet.members.forEach(member => {

@@ -3,7 +3,7 @@ import setEvent from './events.js';
 export const excosList = [{
   name: "Aluta Solution",
   id: 27,
-  about: "The 27th Elected SUG Executives for FUTO",
+  about: "The 27th Elected SUG Executives of FUTO",
   logo: "https://i.ibb.co/WWmX9221/20251012-173114.png",
   color: 'blue',
   members: [{
@@ -145,7 +145,7 @@ export const excosList = [{
  },{
   name: "Aluta Transformation",
   id: 26,
-  about: "The 26th Elected SUG Executives for FUTO",
+  about: "The 26th Elected SUG Executives of FUTO",
   logo: "https://i.ibb.co/xKKvmFxb/20251011-083515.png",
   color: 'green',
   members: [{
@@ -277,17 +277,26 @@ export const excosList = [{
 },{
   name: "Aluta Proclaim",
   id: 25,
-  about: "The 25th Elected SUG Executives for FUTO",
-  logo: null,
+  about: "The 25th Elected SUG Executives of FUTO",
+  logo: "https://i.ibb.co/fGTZ2V72/20251024-150525.png",
   color: 'red',
   members: null,
-  events: null
+  events: null,
+  group: {
+    image: "https://i.ibb.co/5gBMVB3D/IMG-20251024-WA0060.jpg",
+    president: "H.E High Comr. Nwosu Sema Stanley"
+  }
 },{
   name: 'Aluta Legacy',
   id: 24,
-  about: "The 24th Elected SUG Executives for FUTO",
-  logo: null,
+  about: "The 24th Elected SUG Executives of FUTO",
+  logo: "https://i.ibb.co/fzRxnYGX/20251024-151135.png",
+  color: "blue",
   members: null,
-  events: null
+  events: null,
+  group: {
+    image: "https://i.ibb.co/TDcFR43Z/IMG-20251024-WA0064.jpg",
+    president: "H.E High Comr Ifeanyi Chinedu Christian"
+  }
 }
 ]
