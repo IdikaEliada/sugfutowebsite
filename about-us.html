@@ -80,6 +80,11 @@
       max-width: 100%;
       overflow: hidden;
     }
+    
+    .splide__slide img {
+  width: 100%;
+  height: auto;
+}
   </style>
 
   <link rel="stylesheet" href="styles.css">
@@ -228,26 +233,29 @@
             <br />From advocating for better hostel conditions to organizing skill-building workshops, we are committed to fostering a vibrant, inclusive, and progressive academic community. As of October 2025, under the leadership of the newly elected 2025/2026 executive team, we continue to uphold the spirit of 'Aluta Continua, Victoria Acerta'—the struggle continues, and victory is certain.
           </div>
           
+      
+    <div id="image-carousel" class="splide" aria-label="Beautiful Images">
+      <div class="splide__track ">
+    		<ul class="splide__list">
+    			<li class="splide__slide">
+    				<img src="https://i.ibb.co/27bJJcPd/Screenshot-20251024-005313.jpg" class="w-full h-full">
+    			</li>
+    			<li class="splide__slide">
+    				<img src="https://i.ibb.co/N6kkcH7y/20251009-215749.jpg" class="w-full h-full">
+    			</li>
+    			<li class="splide__slide">
+            <img src="https://i.ibb.co/5gBMVB3D/IMG-20251024-WA0060.jpg" class="w-full h-full">
+          </li>
+          <li class="splide__slide">
+            <img src="https://i.ibb.co/TDcFR43Z/IMG-20251024-WA0064.jpg" class="w-full h-full object-top">
+          </li>
+    
+    			
+    		</ul>
+      </div>
+    </div>
 
-          <div class="flex  overflow-hidden w-full max-w-full items-center justify-center gap-2" data-aos="zoom-in" data-aos-delay="200">
-            <img src="https://i.ibb.co/27bJJcPd/Screenshot-20251024-005313.jpg" class="w-full h-auto object-cover max-w-[400px] rounded" loading="lazy" />
-            
-            <img src="https://i.ibb.co/bjSNLbZK/20251010-020850.jpg" class=" h-auto object-cover max-w-[400px] hidden md:block rounded" loading="lazy" />
-          </div>
-          
-      <section class="splide">
-  <div class="splide__slider">
-		<div class="splide__track">
-			<ul class="splide__list">
-				<li class="splide__slide">Slide 01</li>
-				<li class="splide__slide">Slide 02</li>
-				<li class="splide__slide">Slide 03</li>
-			</ul>
-		</div>
-  </div>
-
-  
-</section>
+      
     </section>
     <!-- Hero Section -->
   
@@ -738,28 +746,32 @@
   <script src="script/utilis.js" type="module"></script>
   <!-- Splide JS -->
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-  <script src="
-https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js
-"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+  
   <script>
     document.addEventListener("DOMContentLoaded",
     
     
     function() {
-        AOS.init();
-      const splide = new Splide('.splide', {
-  type   : 'loop',
-  drag   : 'free',
-  focus  : 'center',
-  perPage: 3,
-  autoScroll: {
-    speed: 1,
-  },
-});
-
-splide.mount(window.splide.Extensions);
+      AOS.init();
+      const splide = new Splide('#image-carousel', {
+        type   : 'loop',
+        drag   : 'free',
+        focus  : 'center',
+        cover : true,
+        objectPosition: 'top',
+		    heightRatio: 0.5,
+        perPage: 1,
+        autoScroll: {
+          speed: 1,
+        },
+      });
+  
+      splide.mount(window.splide.Extensions);
+        
+      }
       
-    }
+      
       
     );
   </script>
