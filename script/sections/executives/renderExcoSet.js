@@ -27,10 +27,10 @@ export function displayExcoSet( executivesSet) {
         </div>`
         : 
         membersHTML += `
-        <div class="flex flex-col max-w-sm bg-red/15 border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800/15 dark:border-gray-700  w-full backdrop-blur-sm">
+        <div class="flex flex-col max-w-sm bg-red/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/10 dark:border-gray-700  w-full backdrop-blur-sm">
         <div class="max-h-42 overflow-hidden">
           <img src=${excoSet.group.image}
-          class="rounded-tr-lg"
+          class="rounded-t-lg"
           loading="lazy"/>
         </div>
         <div class="p-4">

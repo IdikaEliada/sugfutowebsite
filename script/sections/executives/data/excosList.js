@@ -279,7 +279,7 @@ export const excosList = [{
   id: 25,
   about: "The 25th Elected SUG Executives of FUTO",
   logo: "https://i.ibb.co/fGTZ2V72/20251024-150525.png",
-  color: 'red',
+  color: 'orange',
   members: null,
   events: null,
   group: {
