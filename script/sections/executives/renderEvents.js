@@ -2,19 +2,19 @@ import {excosList} from './data/excosList.js';
 
 import {setupReadMore} from './about-exco.js'
 
-const excosGrid = document.getElementById('executive-set-container')
+const eventsGrid = document.getElementById('events-set-container')
 
-export function displayExcoSet( executivesSet) {
+export function displayExcoEvent( executivesSet) {
   
-  let membersHTML = '';
+  let eventsHTML = '';
   
   excosList.forEach(excoSet => {
     
     if (excoSet.id === executivesSet){
-      console.log(excoSet.events)
-      if(!excoSet.members || excoSet.members === null){
-        (!excoSet.group || excoSet.group === null) ?
-          membersHTML += `
+      
+      if(!excoSet.events || excoSet.events === null){
+        (!excoSet.events.host || excoSet.events.host === null) ?
+          eventsHTML += `
           <div class="flex-1 justify-center align-center max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700 text-center">
           <div class="executive-detail-container">
             <img src=${excoSet.logo != null? excoSet.logo : `images/aluta_logo.png`} alt="20250616-210243" border="0" class="w-full h-full object-cover touch-auto overflow-auto object-top" loading='lazy' 
@@ -26,7 +26,7 @@ export function displayExcoSet( executivesSet) {
           </div>
         </div>`
         : 
-        membersHTML += `
+        eventsHTML += `
         <div class="flex flex-col max-w-sm bg-red/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/10 dark:border-gray-700  w-full backdrop-blur-sm">
         <div class="max-h-42 overflow-hidden">
           <img src=${excoSet.group.image}
@@ -46,42 +46,43 @@ export function displayExcoSet( executivesSet) {
       </div>`
       } else {
       
-        excoSet.members.forEach(member => {
-          
+        excoSet.events.forEach(event => {
+          console.log(event)
     
-          membersHTML += `
-          <div class="executives-container max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700">
-            <div class="executive-detail-container flower bg-linear-30 from-${excoSet.color}-500 to-${excoSet.color}-800 animate-spin">
-                <img src=${member.image != null? member.image : excoSet.logo} alt="20250616-210243" border="0" class="w-full h-full object-cover touch-auto overflow-auto object-top" loading='lazy' 
+          eventsHTML += `
+          <div class="events-container max-w-sm bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700">
+            <div class="events-detail-container bg-linear-30 from-${excoSet.color}-500 to-${excoSet.color}-800 min-h-38 max-h-42 overflow-hidden">
+                <img src=${excoSet.image != null? excoSet.image : excoSet.logo} alt=${event.name} border="0" class="w-full h-full object-cover touch-auto overflow-auto object-top" loading='lazy' 
                 />
             </div>
+            <div class="p-6">
             <div class="block text-sm/6 font-medium text-gray-800 dark:text-gray-400">
-              ${member.titles}
+              ${event.titles}
             </div>
             <div>
-              <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">${member.name}</h5>
+              <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">${event.name}</h5>
             </div>
             <p class="mb-3 font-normal text-gray-500 dark:text-gray-300 content-container text-base">
               <span class="content-wrapper">
                 <span class="content">
                   <span class="text text-base">
                     <span>
-                      ${member.about}
+                      ${event.about}
                     </span>
                     <span>
                       <span>Comr.</span>
                       <span>
-                        ${member.name},
+                        ${event.name},
                       </span> 
                     </span> 
                     <span>
                     served as the SUG
                     </span> 
-                    <span> ${member.position} </span>
+                    <span> ${event.position} </span>
                     <span> under the ${excoSet.name} executives FUTO. 
                     </span> 
                     <span> 
-                      ${member.role}. 
+                      ${event.role}. 
                     </span>
                   </span>
                 </span>
@@ -90,7 +91,8 @@ export function displayExcoSet( executivesSet) {
               </span>
             </p>
             <div class="inline-flex font-medium items-center text-${excoSet.color}-600 hover:underline text-xl">
-              ${member.position}
+              ${event.position}
+            </div>
             </div>
           </div>`
         })
@@ -98,9 +100,9 @@ export function displayExcoSet( executivesSet) {
     }
   })
   
-  return membersHTML
+  return eventsHTML
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  setupReadMore(excosGrid)
+  setupReadMore(eventsGrid)
 });

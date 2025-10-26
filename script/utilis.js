@@ -4,6 +4,8 @@ import {excosList} from './sections/executives/data/excosList.js'
 
 import {displayExcoSet} from './sections/executives/renderExcoSet.js';
 
+import {displayExcoEvent} from './sections/executives/renderEvents.js';
+
 import displayExcoSocials from './sections/socials/header.js';
 
 import loadingAnimation from './libs/loadingImg.js';
@@ -18,6 +20,8 @@ const executiveIntro= document.getElementById('executive-intro');
 
 const selectedExcoSpan = document.getElementById('selected-excos')
 
+const selectedEventSpan = document.getElementById('selected-events')
+
 const menuIcon = document.getElementById('menu-icon');
 
 const themeIcon = document.getElementById('theme-icon');
@@ -30,7 +34,11 @@ const excosDropDownList = document.getElementById('selection-box')
 
 const selectExcos = document.getElementById('select-excos')
 
+const selectEvents = document.getElementById('select-events')
+
 const excosGrid = document.getElementById('executive-set-container')
+
+const eventsGrid = document.getElementById('events-set-container')
 
 const excosSocials = document.getElementById('socials-header')
 
@@ -92,13 +100,23 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () 
 if(selectExcos){
   selectExcos.addEventListener('click', ()=>{
   excosDropDownList.classList.toggle('hidden')
-})
+  })
 
   selectionBox.innerHTML = renderList();
 
-  excosGrid.innerHTML = displayExcoSet(27)
+    excosGrid.innerHTML = displayExcoSet(27)
   
-} 
+} else if (selectEvents){
+  
+  selectEvents.addEventListener('click', ()=>{
+  excosDropDownList.classList.toggle('hidden')
+  
+  })
+
+  selectionBox.innerHTML = renderList();
+  
+    //eventsGrid.innerHTML = displayExcoEvent(26)
+  }
 
 // const menuIcon = document.getElementById('menu-icon');
     

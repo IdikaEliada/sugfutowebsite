@@ -6,7 +6,9 @@ export default function setEvent(hosts, data = allSUGEvents){
   
   let allEvents = data;
   
-  events = allEvents.map(e => {if(e.host.aluta === hosts) return e})
+  events = allEvents.filter(e => e.host.aluta === hosts)
+  
+  //events = allEvents.map(e => {if(e.host.aluta === hosts) return e})
   
   return events
 }

@@ -1,4 +1,17 @@
-export const allSUGEvents = [
+export const allSUGEvents = [{
+    name: "P-Cambridge Examination palliatives",
+    date: new Date(2025, 10, 2),
+    location: "Asiabaka Square",
+    description: "",
+    reviews: "",
+    host: {
+      aluta: 27,
+      family: "Aluta Solution",
+      position: "SUG Treasurer",
+      name: "Christopher Bukas"
+    },
+    image: "thr.png"
+  }, 
   {
     name: "Instant Cash Access for Students",
     date: new Date(2025, 3, 21),
@@ -11,7 +24,7 @@ export const allSUGEvents = [
       position: "SUG Treasurer",
       name: "Charles Princess"
     },
-    images: ["instant-cash-flyer.jpg"]
+    image: "instant-cash-flyer.jpg"
   },
   {
     name: "Career Fair 1.0 & Werden Conference",
