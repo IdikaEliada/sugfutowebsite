@@ -51,13 +51,13 @@ export function displayExcoEvent( executivesSet) {
     
           eventsHTML += `
           <div class="events-container max-w-sm bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700">
-            <div class="events-detail-container bg-linear-30 from-${excoSet.color}-500 to-${excoSet.color}-800 min-h-38 max-h-42 overflow-hidden">
-                <img src=${excoSet.image != null? excoSet.image : excoSet.logo} alt=${event.name} border="0" class="w-full h-full object-cover touch-auto overflow-auto object-top" loading='lazy' 
+            <div class="events-detail-container bg-linear-30 from-${excoSet.color}-500 to-${excoSet.color}-800 min-h-38 max-h-42 overflow-hidden rounded-t-lg">
+                <img src=${event.image != null? event.image : excoSet.logo} alt=${event.name} border="0" class="w-full h-full object-cover touch-auto overflow-auto object-top rounded-t-lg" loading='lazy' 
                 />
             </div>
             <div class="p-6">
             <div class="block text-sm/6 font-medium text-gray-800 dark:text-gray-400">
-              ${event.titles}
+              ${event.date.toLocaleDateString('en-GB')}
             </div>
             <div>
               <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">${event.name}</h5>
@@ -66,32 +66,36 @@ export function displayExcoEvent( executivesSet) {
               <span class="content-wrapper">
                 <span class="content">
                   <span class="text text-base">
+                  On ${event.date.toDateString()}, The SUG ${event.host.position},
                     <span>
-                      ${event.about}
+                    High Comr.
+                      ${event.host.name}
                     </span>
                     <span>
-                      <span>Comr.</span>
+                      <span>(${event.host.family})</span>
                       <span>
-                        ${event.name},
+                        ${event.reviews}, at ${event.location}.
                       </span> 
                     </span> 
                     <span>
-                    served as the SUG
+                    ${event.description}
                     </span> 
-                    <span> ${event.position} </span>
+                    
                     <span> under the ${excoSet.name} executives FUTO. 
                     </span> 
-                    <span> 
-                      ${event.role}. 
-                    </span>
+                    
                   </span>
                 </span>
               </span>
               <span class="read-more-btn font-medium items-center text-${excoSet.color}-600 hover:underlined-md cursor-pointer transition-colors duration-300 hover:bg-${excoSet.color}-700 inline-flex text-xs/10 hidden" aria-expanded="false">
               </span>
             </p>
-            <div class="inline-flex font-medium items-center text-${excoSet.color}-600 hover:underline text-xl">
-              ${event.position}
+            <div class="inline-flex font-medium items-center hover:underline text-sm gap-2">
+            
+              Courtesy: 
+              <span class="text-${excoSet.color}-600" text-lg>
+               ${ event.host.family}
+              </span>
             </div>
             </div>
           </div>`

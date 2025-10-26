@@ -3,28 +3,28 @@ export const allSUGEvents = [{
     date: new Date(2025, 10, 2),
     location: "Asiabaka Square",
     description: "",
-    reviews: "",
+    reviews: "shared exams palliatives for the Students of FUTO",
     host: {
       aluta: 27,
       family: "Aluta Solution",
-      position: "SUG Treasurer",
+      position: "President",
       name: "Christopher Bukas"
     },
-    image: "thr.png"
+    image: null
   }, 
   {
     name: "Instant Cash Access for Students",
-    date: new Date(2025, 3, 21),
+    date: new Date(2025, 2, 18),
     location: "SUG Resource Center POS Stand",
-    description: "Withdraw as low as 40 NAIRA per thousand at Our SUG Resource Center POS Stand",
-    reviews: "Convenient cash withdrawal service for students",
+    description: "Students Withdrew as low as 40 NAIRA per thousand at Our SUG Resource Center POS Stan",
+    reviews: "created a convenient cash withdrawal service for students",
     host: {
       aluta: 26,
       family: "Aluta Wallet",
-      position: "SUG Treasurer",
+      position: "Treasurer",
       name: "Charles Princess"
     },
-    image: "instant-cash-flyer.jpg"
+    image: "https://i.ibb.co/sdk5ZsrV/Screenshot-20251026-134813.jpg"
   },
   {
     name: "Career Fair 1.0 & Werden Conference",
@@ -35,10 +35,10 @@ export const allSUGEvents = [{
     host: {
       aluta: 26,
       family: "Aluta Wallet",
-      position: "SUG Treasurer",
+      position: "Treasurer",
       name: "Charles Princess"
     },
-    images: ["career-fair-flyer.jpg"]
+    image: "https://i.ibb.co/1f53KTVw/Screenshot-20251026-143234.jpg"
   },
   {
     name: "Beyond the Books Podcast",

@@ -240,8 +240,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         excosDropDownList.classList.toggle('hidden')
         
-        setupReadMore(excosGrid)
-        
+        if(excosGrid){
+          setupReadMore(excosGrid)
+        } else if (eventsGrid) {
+          setupReadMore(eventsGrid)
+        }
       })
     })
     
