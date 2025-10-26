@@ -1,5 +1,7 @@
 import {renderList} from './components/selectExcos.js';
 
+import {renderEventList} from './components/selectEvent.js';
+
 import {excosList} from './sections/executives/data/excosList.js'
 
 import {displayExcoSet} from './sections/executives/renderExcoSet.js';
@@ -109,13 +111,13 @@ if(selectExcos){
 } else if (selectEvents){
   
   selectEvents.addEventListener('click', ()=>{
-  excosDropDownList.classList.toggle('hidden')
+  selectionBox.classList.toggle('hidden')
   
   })
 
-  selectionBox.innerHTML = renderList();
+  selectionBox.innerHTML = renderEventList();
   
-    //eventsGrid.innerHTML = displayExcoEvent(26)
+  eventsGrid.innerHTML = displayExcoEvent(27)
   }
 
 // const menuIcon = document.getElementById('menu-icon');
@@ -195,21 +197,43 @@ document.addEventListener('DOMContentLoaded', () => {
   
           uncheckSelectedList.forEach(l => l.innerHTML = "")
           
+          if(selectedExcoSpan){
           excosGrid.innerHTML = "";
             
           excosGrid.innerHTML = displayExcoSet(e.id)
           
           executiveIntro.innerHTML = `${e.name} is the ${showPosition(e.id)} elected Executives for the SUG Family, Federal University of Technology, Owerri`
+          } else if(selectedEventSpan){
+            eventsGrid.innerHTML = "";
+            
+          eventsGrid.innerHTML = displayExcoEvent(e.id)
+          
+          executiveIntro.innerHTML = `${e.name} is the ${showPosition(e.id)} elected Executives for the SUG Family, Federal University of Technology, Owerri and Were the SUG executives for the 20${e.id -2}/${e.id -1} Academic year. 
+            Here are some of their achievements:`
+          }
           }
           
-          selectedExcoSpan.innerHTML = `<div class="flex justify-center items-center gap-2">
+          if(selectedExcoSpan){
+            
+            changeSpan(selectedExcoSpan)
+          } else if (selectedEventSpan) {
+            changeSpan(selectedEventSpan)
+          }
+          
+          function changeSpan(page){
+          page.innerHTML = `<div class="flex justify-center items-center gap-2">
             <div class="flex justify-center items-center">
               <svg class="w-3 h-3 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                 <path fill-rule="evenodd" d="M10.271 5.575C8.967 4.501 7 5.43 7 7.12v9.762c0 1.69 1.967 2.618 3.271 1.544l5.927-4.881a2 2 0 0 0 0-3.088l-5.927-4.88Z" clip-rule="evenodd"/>
               </svg>
             </div>
             ${excoSetList.textContent}
-          </div>`
+          </div>` 
+          }
+          
+          
+          
+          
         })
         
         

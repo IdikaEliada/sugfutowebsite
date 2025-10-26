@@ -2,7 +2,7 @@ import {excosList} from '../sections/executives/data/excosList.js';
 
 let selectionBoxHTML = '';
 
-export function renderList(){
+export function renderEventList(){
   excosList.forEach((excoSet) => {
   selectionBoxHTML += `
     <li class="relative cursor-default py-2 pr-9 pl-3 select-none" id="listbox-option-${excoSet.id}" role="option">
@@ -12,7 +12,7 @@ export function renderList(){
           />
         </div>
         <span class="ml-3 block truncate font-normal">
-          ${excoSet.name}
+          20${excoSet.id -2}/20${excoSet.id -1} Executives
         </span>
       </div>
       

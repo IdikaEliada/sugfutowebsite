@@ -13,7 +13,7 @@ export function displayExcoEvent( executivesSet) {
     if (excoSet.id === executivesSet){
       
       if(!excoSet.events || excoSet.events === null){
-        (!excoSet.events.host || excoSet.events.host === null) ?
+        (!excoSet.image || excoSet.image=== null) ?
           eventsHTML += `
           <div class="flex-1 justify-center align-center max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700 text-center">
           <div class="executive-detail-container">
@@ -47,7 +47,7 @@ export function displayExcoEvent( executivesSet) {
       } else {
       
         excoSet.events.forEach(event => {
-          console.log(event)
+          
     
           eventsHTML += `
           <div class="events-container max-w-sm bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700">

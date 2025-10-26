@@ -11,7 +11,7 @@ export function displayExcoSet( executivesSet) {
   excosList.forEach(excoSet => {
     
     if (excoSet.id === executivesSet){
-      console.log(excoSet.events)
+      
       if(!excoSet.members || excoSet.members === null){
         (!excoSet.group || excoSet.group === null) ?
           membersHTML += `
