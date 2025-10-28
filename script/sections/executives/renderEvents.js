@@ -50,7 +50,7 @@ export function displayExcoEvent( executivesSet) {
           
     
           eventsHTML += `
-          <div class="events-container max-w-sm bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700">
+          <div class="events-container max-w-sm bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700" id=${event.name}>
             <div class="events-detail-container bg-linear-30 from-${excoSet.color}-500 to-${excoSet.color}-800 min-h-38 max-h-42 overflow-hidden rounded-t-lg">
                 <img src=${event.image != null? event.image : excoSet.logo} alt=${event.name} border="0" class="w-full h-full object-cover touch-auto overflow-auto object-top rounded-t-lg" loading='lazy' 
                 />

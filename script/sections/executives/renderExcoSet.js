@@ -50,7 +50,7 @@ export function displayExcoSet( executivesSet) {
           
     
           membersHTML += `
-          <div class="executives-container max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700">
+          <div class="executives-container max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700" id=${excoSet.name}>
             <div class="executive-detail-container flower bg-linear-30 from-${excoSet.color}-500 to-${excoSet.color}-800 animate-spin">
                 <img src=${member.image != null? member.image : excoSet.logo} alt="20250616-210243" border="0" class="w-full h-full object-cover touch-auto overflow-auto object-top" loading='lazy' 
                 />
