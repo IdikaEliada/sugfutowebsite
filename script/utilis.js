@@ -30,7 +30,7 @@ const themeIcon = document.getElementById('theme-icon');
 
 const isMenuOpen = menuIcon.classList.contains('fa-bars')
 
-const isIcon = themeIcon.classList.contains('fa-moon')
+// const isIcon = themeIcon.classList.contains('fa-moon')
 
 const excosDropDownList = document.getElementById('selection-box')
 
@@ -56,22 +56,22 @@ menuIcon.addEventListener('click', ()=>{
 loadPage(preloader)
 loadingAnimation(images)
 
-const HTML = document.querySelector('html')
+const HTML = document.documentElement
 
 function isDarkMode() {
   return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
+   }
 
-function systemDefault() {
-  !isDarkMode() ? HTML.dataset.theme = "light" : HTML.dataset.theme = "dark";
-  };
+// function systemDefault() {
+//   !isDarkMode() ? HTML.dataset.theme = "light" : HTML.dataset.theme = "dark";
+//   };
 
-function changeThemeIcon() {
-  if(isIcon){
-    themeIcon.classList.toggle('fa-sun')
-    themeIcon.classList.toggle('fa-moon')
-  }
-}
+// function changeThemeIcon() {
+//   if(isIcon){
+//     themeIcon.classList.toggle('fa-sun')
+//     themeIcon.classList.toggle('fa-moon')
+//   }
+// }
 
 function getIdNumber(element) {
   const parts = element.split('-');
@@ -262,7 +262,7 @@ export default function loadPage() {
       preloader.remove()
     }
   }, 1000)
-  systemDefault()
+  
   if (!isDarkMode()) {
     themeIcon.classList.add('fa-sun')
     themeIcon.classList.remove('fa-moon')
