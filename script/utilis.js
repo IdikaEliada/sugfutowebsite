@@ -22,6 +22,8 @@ const selectionBox = document.getElementById('selection-box');
 
 const images = '.loading-image'
 
+const status = document.getElementById('status')
+
 const executiveIntro= document.getElementById('executive-intro');
 
 const selectedExcoSpan = document.getElementById('selected-excos')
@@ -264,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (facultyList) {
   facultyList.innerHTML = renderFaculty()
     
-    submitApplication(applicationForm)
+    submitApplication(applicationForm, status)
   }
   
   

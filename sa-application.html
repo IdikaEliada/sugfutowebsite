@@ -29,6 +29,7 @@
   <meta name="twitter:title" content="SUG Family FUTO">
   <meta name="twitter:description" content="The Student Union Government, FUTOwerri">
   <meta name="twitter:image" content="https://i.ibb.co/MxBKdRnL/20251009-224316.png">
+  
 
   <!-- Robots (SEO) -->
   <meta name="robots" content="index, follow">
@@ -41,7 +42,7 @@
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   
   <!-- swiper -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/> -->
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   
@@ -82,7 +83,7 @@
 
   <link rel="stylesheet" href="styles.css">
   
-  <title>SUG FUTO SOCIALS</title>
+  <title>APPLICATION FOR THE POSITION OF SA TO THE SUG PRO</title>
 </head>
 
 <body style="font-family: 'Sora';" class="px-5 mt-12 bg-[#eeeeee] dark:bg-[#111111] bg-cover bg-center bg-image dark:text-white relative pb-5 overflow-x-hidden max-w-[100vw]">
@@ -211,7 +212,7 @@
             <svg class="rtl:rotate-180 w-3 h-3 mx-1 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
             </svg>
-            Apply for SA
+            Become an SA
           </a>
         </li>
       </ol>
@@ -220,7 +221,10 @@
     
   
  <section id="application-for-sa" class="pb-32">
-   <div id="status"></div>
+   <div id="status" >
+    
+  </div>
+   
       <section>
         <div class="py-8 lg:py-16 ">
           <h2
@@ -236,7 +240,7 @@
           <div
             class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-3 sm:py-16 lg:px-6"
           >
-            <form action="#" id="application-form" class="space-y-8 md:col-span-2 mb-4">
+            <form action="https://formspree.io/f/xblpykgp" id="application-form" class="space-y-8 md:col-span-2 mb-4">
               <div class="flex flex-col md:flex-row md:justify-center md:items-center gap-6">
                 <div>
                   <label
@@ -302,20 +306,8 @@
                   />
                 </div>
               </div>
-              <div class="!sm:col-span-2">
-                <label
-                  for="message"
-                  class="block mb-2 text-sm font-medium text-[#111611] dark:text-gray-400"
-                  >Application</label
-                >
-                <textarea
-                  id="message"
-                  rows="6"
-                  class="block p-2.5 w-full text-sm text-[#111611] bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-[#22c55e] focus:border-[#22c55e] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#22c55e] dark:focus:border-[#22c55e]"
-                  name="message" placeholder="State Your Reasons for Applying"
-                ></textarea>
-              </div>
-              <div>
+              <div class="flex flex-col md:flex-row md:justify-center md:items-center gap-6">
+                <div>
                   <label
                     for="phone"
                     class="block mb-2 text-sm font-medium text-[#111611] dark:text-gray-300"
@@ -329,6 +321,47 @@
                     required
                   />
                 </div>
+                <div>
+                  <label
+                    for="category"
+                    class="block mb-2 text-sm font-medium text-[#111611] dark:text-gray-300"
+                    >Select Role</label
+                  >
+                  <select 
+                    type="text"
+                    id="category" name="category"
+                    class="block p-3 w-full text-sm text-[#111611] bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-[#22c55e] focus:border-[#22c55e] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#22c55e] dark:focus:border-[#22c55e] dark:shadow-sm-light"
+                    >
+                    
+                <option value="" disabled selected>Select Team Position</option>
+                <option value="Team Lead">Team Lead</option>
+                <option value="Ast Team Lead">Ast Team Lead</option>
+                <option value="Team Secretary / Personal Assistant">Team Secretary / Personal Assistant</option>
+                <option value="SA on Event & Outreach">SA on Event & Outreach</option>
+                <option value="SA on Creative Media">SA on Creative Media</option>
+                <option value="SA on Digital Innovation & Podcast">SA on Digital Innovation & Podcast</option>
+                <option value="SA on Editorial Matters">SA on Editorial Matters</option>
+                <option value="SA on Media Action & Mobilization (Offline Publicity Taskforce)">SA on Media Action & Mobilization (Offline Publicity Taskforce)</option>
+                <option value="SA on News & Information">SA on News & Information</option>
+                <option value="SA on Media Logistics">SA on Media Logistics</option>
+
+                  </select>
+                </div>
+              </div>
+              <div class="!sm:col-span-2">
+                <label
+                  for="message"
+                  class="block mb-2 text-sm font-medium text-[#111611] dark:text-gray-400"
+                  >Application</label
+                >
+                <textarea
+                  id="message"
+                  rows="6"
+                  class="block p-2.5 w-full text-sm text-[#111611] bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-[#22c55e] focus:border-[#22c55e] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#22c55e] dark:focus:border-[#22c55e]"
+                  name="message" placeholder="State Your Reasons for Applying"
+                ></textarea>
+              </div>
+              
               <label
                   
                   class="block mb-4 text-sm font-medium text-[#111611] dark:text-gray-300 "
@@ -583,6 +616,7 @@
   </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="script/utilis.js" type="module"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
