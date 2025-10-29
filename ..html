@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUTO Faculty & Department Selector</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 15px;
+            color: #333;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+            background-color: white;
+        }
+
+        input:disabled {
+            background-color: #f0f0f0;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            color: #667eea;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .result.show {
+            display: block;
+        }
+
+        .result h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .result p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .result strong {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FUTO Selector</h1>
+        <p class="subtitle">Federal University of Technology, Owerri</p>
+
+        <form id="futoForm">
+            <div class="form-group">
+                <label for="faculty">Select or Type Faculty/School</label>
+                <input 
+                    type="text" 
+                    id="faculty" 
+                    name="faculty" 
+                    list="facultyList"
+                    placeholder="Type or select a faculty..."
+                    autocomplete="off"
+                >
+                <datalist id="facultyList"></datalist>
+            </div>
+
+            <div class="form-group">
+                <label for="department">Select or Type Department</label>
+                <input 
+                    type="text" 
+                    id="department" 
+                    name="department" 
+                    list="departmentList"
+                    placeholder="Select a faculty first..."
+                    autocomplete="off"
+                    disabled
+                >
+                <datalist id="departmentList"></datalist>
+            </div>
+        </form>
+
+        <div class="loading" id="loading">Loading departments...</div>
+
+        <div class="result" id="result">
+            <h3>Your Selection</h3>
+            <p><strong>Faculty/School:</strong> <span id="selectedFaculty"></span></p>
+            <p><strong>Department:</strong> <span id="selectedDepartment"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // FUTO Faculties and Departments Data
+        const futoData = {
+            "School of Engineering & Engineering Technology": [
+                "Petroleum Engineering",
+                "Materials & Metallurgical Engineering",
+                "Mechanical Engineering",
+                "Civil Engineering",
+                "Chemical Engineering",
+                "Food Science & Technology",
+                "Polymer & Textile Engineering",
+                "Biomedical Engineering",
+                "Agricultural and Bioresources Engineering"
+            ],
+            "School of Physical Sciences": [
+                "Mathematics",
+                "Physics",
+                "Chemistry",
+                "Statistics",
+                "Science Laboratory Technology"
+            ],
+            "School of Biological Sciences": [
+                "Biochemistry",
+                "Microbiology",
+                "Biotechnology",
+                "Biology",
+                "Forensic Science"
+            ],
+            "School of Agriculture & Agricultural Technology": [
+                "Crop Science Technology",
+                "Agricultural Economics",
+                "Agricultural Extension",
+                "Animal Science and Technology",
+                "Crop Science and Technology",
+                "Fisheries and Aquaculture Technology",
+                "Forestry and Wildlife Technology",
+                "Soil Science and Technology"
+            ],
+            "School of Information & Communication Technology": [
+                "Computer Science",
+                "Software Engineering",
+                "Cyber Security",
+                "Information Technology"
+            ],
+            "School of Environmental Sciences": [
+                "Architecture",
+                "Building Technology",
+                "Environmental Management",
+                "Quantity Surveying",
+                "Surveying and Geoinformatics",
+                "Urban and Regional Planning",
+                "Estate Management and Evaluation"
+            ],
+            "School of Logistics & Innovation Technology": [
+                "Estate Management & Valuate",
+                "Logistics & Transport Technology",
+                "Entrepreneurship & Innovation S",
+                "Maritime Technology and Logistics",
+                "Supply Chain Management",
+                "Project Management Technology"
+            ],
+            "School of Health Technology": [
+                "Prosthetics and Orthotics",
+                "Environmental Health Science",
+                "Optometry",
+                "Public Health Technology",
+                "Dental Technology",
+                "Radiography"
+            ],
+            "School of Electrical Systems & Engineering Technology": [
+                "Mechatronics Engineering",
+                "Computer Engineering",
+                "Electronics Engineering",
+                "Telecommunications Engineering",
+                "Electrical (Power Systems) Engineering"
+            ],
+            "School of Basic Medical Sciences": [
+                "Human Anatomy",
+                "Human Physiology"
+            ],
+            "College of Medicine": [
+                "Medicine and Surgery (MBBS)"
+            ],
+            "Ce-Sustainable Procurement, Environmental & Social Standards": [
+                "Sustainable Social Development",
+                "Sustainable Environmental Studies",
+                "Procurement Management"
+            ]
+        };
+
+        // Get elements
+        const facultyInput = document.getElementById('faculty');
+        const facultyList = document.getElementById('facultyList');
+        const departmentInput = document.getElementById('department');
+        const departmentList = document.getElementById('departmentList');
+        const loading = document.getElementById('loading');
+        const result = document.getElementById('result');
+        const selectedFacultySpan = document.getElementById('selectedFaculty');
+        const selectedDepartmentSpan = document.getElementById('selectedDepartment');
+
+        // Populate faculties on page load
+        function populateFaculties() {
+            const faculties = Object.keys(futoData);
+            faculties.forEach(faculty => {
+                const option = document.createElement('option');
+                option.value = faculty;
+                facultyList.appendChild(option);
+            });
+        }
+
+        // Function to populate departments based on selected faculty
+        function populateDepartments(faculty) {
+            // Clear existing options
+            departmentList.innerHTML = '';
+            
+            // Show loading
+            loading.classList.add('show');
+            
+            // Simulate loading delay for better UX
+            setTimeout(() => {
+                const departments = futoData[faculty];
+                
+                if (departments) {
+                    departments.forEach(dept => {
+                        const option = document.createElement('option');
+                        option.value = dept;
+                        departmentList.appendChild(option);
+                    });
+                    
+                    // Enable department input
+                    departmentInput.disabled = false;
+                    departmentInput.placeholder = "Type or select a department...";
+                }
+                
+                // Hide loading
+                loading.classList.remove('show');
+            }, 300);
+        }
+
+        // Event listener for faculty input change
+        facultyInput.addEventListener('input', function() {
+            const selectedFaculty = this.value;
+            
+            // Hide result
+            result.classList.remove('show');
+            
+            // Reset department
+            departmentInput.value = '';
+            departmentInput.disabled = true;
+            departmentInput.placeholder = "Select a faculty first...";
+            departmentList.innerHTML = '';
+            
+            // Check if the entered value matches a faculty
+            if (futoData[selectedFaculty]) {
+                populateDepartments(selectedFaculty);
+            }
+        });
+
+        // Event listener for department input change
+        departmentInput.addEventListener('input', function() {
+            const selectedFaculty = facultyInput.value;
+            const selectedDepartment = this.value;
+            
+            // Check if both values are valid
+            if (futoData[selectedFaculty] && futoData[selectedFaculty].includes(selectedDepartment)) {
+                selectedFacultySpan.textContent = selectedFaculty;
+                selectedDepartmentSpan.textContent = selectedDepartment;
+                result.classList.add('show');
+            } else {
+                result.classList.remove('show');
+            }
+        });
+
+        // Initialize
+        populateFaculties();
+    </script>
+</body>
+</html>

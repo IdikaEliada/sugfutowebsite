@@ -2,6 +2,8 @@ import {renderList} from './components/selectExcos.js';
 
 import {renderEventList} from './components/selectEvent.js';
 
+import { renderFaculty } from './components/selectFaculty.js'
+
 import {excosList} from './sections/executives/data/excosList.js'
 
 import {displayExcoSet} from './sections/executives/renderExcoSet.js';
@@ -13,6 +15,8 @@ import displayExcoSocials from './sections/socials/header.js';
 import loadingAnimation from './libs/loadingImg.js';
 
 import {setupReadMore} from './sections/executives/about-exco.js'
+
+import { submitApplication } from './libs/applyForSA.js'
 
 const selectionBox = document.getElementById('selection-box');
 
@@ -45,6 +49,12 @@ const eventsGrid = document.getElementById('events-set-container')
 const excosSocials = document.getElementById('socials-header')
 
 const dropdownButton = document.getElementById('dropdownButton');
+
+const applyForSADiv = document.getElementById('application-for-sa')
+
+const facultyList = document.getElementById('faculties')
+
+const applicationForm = document.getElementById('application-form')
 
 menuIcon.addEventListener('click', ()=>{
   if(isMenuOpen){
@@ -97,7 +107,6 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () 
   changeThemeIcon()
   systemDefault()
 });
-
 
 if(selectExcos){
   selectExcos.addEventListener('click', ()=>{
@@ -251,6 +260,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if (excosSocials) {
     excosSocials.innerHTML = displayExcoSocials(27)
     }
+    
+  if (facultyList) {
+  facultyList.innerHTML = renderFaculty()
+    
+    submitApplication(applicationForm)
+  }
+  
+  
 })
 
 export default function loadPage() {
