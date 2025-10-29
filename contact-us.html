@@ -223,36 +223,68 @@
           <div
             class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-3 sm:py-16 lg:px-6"
           >
-            <form action="#" class="space-y-8 md:col-span-2">
-              <div>
-                <label
-                  for="email"
-                  class="block mb-2 text-sm font-medium text-[#111611] dark:text-gray-300"
-                  >Your email</label
-                >
-                <input
-                  type="email"
-                  id="email"
-                  class="shadow-sm bg-gray-50 border border-gray-300 text-[#111611] text-sm rounded-lg focus:ring-[#22c55e] focus:border-[#22c55e] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#22c55e] dark:focus:border-[#22c55e] dark:shadow-sm-light"
-                  placeholder="name@flowbite.com"
-                  required
-                />
+            <form action="#" class="space-y-8 md:col-span-2 mb-4">
+              <div class="flex flex-col md:flex-row md:justify-center md:items-center gap-6">
+                <div>
+                  <label
+                    for="name"
+                    class="block mb-2 text-sm font-medium text-[#111611] dark:text-gray-300"
+                    >Fullname</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-[#111611] text-sm rounded-lg focus:ring-[#22c55e] focus:border-[#22c55e] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#22c55e] dark:focus:border-[#22c55e] dark:shadow-sm-light"
+                    placeholder="Eg. Ibiam Idika"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="department"
+                    class="block mb-2 text-sm font-medium text-[#111611] dark:text-gray-300"
+                    >Department</label
+                  >
+                  <input
+                    type="text"
+                    id="department"
+                    class="block p-3 w-full text-sm text-[#111611] bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-[#22c55e] focus:border-[#22c55e] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#22c55e] dark:focus:border-[#22c55e] dark:shadow-sm-light"
+                    placeholder="Eg. Software Engineering"
+                    
+                  />
+                </div>
               </div>
-              <div>
-                <label
-                  for="subject"
-                  class="block mb-2 text-sm font-medium text-[#111611] dark:text-gray-300"
-                  >Subject</label
-                >
-                <input
-                  type="text"
-                  id="subject"
-                  class="block p-3 w-full text-sm text-[#111611] bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-[#22c55e] focus:border-[#22c55e] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#22c55e] dark:focus:border-[#22c55e] dark:shadow-sm-light"
-                  placeholder="Let us know how we can help you"
-                  required
-                />
+              <div class="flex flex-col md:flex-row md:justify-center md:items-center gap-6">
+                <div>
+                  <label
+                    for="email"
+                    class="block mb-2 text-sm font-medium text-[#111611] dark:text-gray-300"
+                    >Your email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-[#111611] text-sm rounded-lg focus:ring-[#22c55e] focus:border-[#22c55e] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#22c55e] dark:focus:border-[#22c55e] dark:shadow-sm-light"
+                    placeholder="example@gmail.com"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="subject"
+                    class="block mb-2 text-sm font-medium text-[#111611] dark:text-gray-300"
+                    >Subject</label
+                  >
+                  <input
+                    type="text"
+                    id="subject"
+                    class="block p-3 w-full text-sm text-[#111611] bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-[#22c55e] focus:border-[#22c55e] dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#22c55e] dark:focus:border-[#22c55e] dark:shadow-sm-light"
+                    placeholder="Let us know how we can help you"
+                    required
+                  />
+                </div>
               </div>
-              <div class="sm:col-span-2">
+              <div class="!sm:col-span-2">
                 <label
                   for="message"
                   class="block mb-2 text-sm font-medium text-[#111611] dark:text-gray-400"
@@ -267,18 +299,18 @@
               </div>
               <label
                   for="subject"
-                  class="block mb-2 text-sm font-medium text-[#111611] dark:text-gray-300 text-center"
+                  class="block mb-4 text-sm font-medium text-[#111611] dark:text-gray-300 "
                   >Whether it's feedback, a concern, or an idea, FUTO SUG is committed to listening. Reach us anytime.</label
                 >
               <button
-                type="submit"
-                class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-[#166534] sm:w-fit hover:bg-[#166534] focus:ring-4 focus:outline-none focus:ring-[#22c55e] dark:bg-[#16a34a] dark:hover:bg-[#166534] dark:focus:ring-[#166534]"
+                type="submit"qq
+                class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-[#166534] hover:bg-[#166534] focus:ring-4 focus:outline-none focus:ring-[#22c55e] dark:bg-[#16a34a] dark:hover:bg-[#166534] dark:focus:ring-[#166534] w-full"
               >
                 Send message
               </button>
             </form>
             <div class="space-y-8">
-              <div class="flex items-start">
+              <div class="flex items-center flex-col text-center">
                 <svg
                   class="w-6 h-6 text-gray-400 mr-2"
                   fill="currentColor"
@@ -292,15 +324,17 @@
                   ></path>
                 </svg>
                 <div>
-                  <p class="text-sm font-medium text-gray-300">
-                    Company information:
+                  <p class="text-sm font-medium dark:text-gray-300 text-gray-600">
+                    Information:
                   </p>
-                  <p class="text-gray-400">
-                    ASES FUTO<br />PMB: 1576
+                  <p class="dark:text-gray-400 text-500 text-xl">
+                    SUG FUTO <p class="text-xs">STUDENT'S UNION GOVERNMENT</p><p class="text-[0.65rem]">
+                      Federal University of Technology, Owerri 
+                    </p>PMB: 1576
                   </p>
                 </div>
               </div>
-              <div class="flex items-start">
+              <a href="https://maps.app.goo.gl/f2jz7a7z4F9QAW6T9" class="flex items-center flex-col text-center">
                 <svg
                   class="w-6 h-6 text-gray-400 mr-2"
                   fill="currentColor"
@@ -314,15 +348,17 @@
                   ></path>
                 </svg>
                 <div>
-                  <p class="text-sm font-medium text-gray-300">Address:</p>
-                  <a href="https:maps.app.goo.gl/7RqK7wf2KgXWkRWp7" class="text-gray-400">
-                    Software engineering department
-                    <br />
-                    9XJQ+9Q4 Eziobo
-                  </a>
+                  <p class="text-sm font-medium dark:text-gray-300 text-gray-600">
+                    Address:
+                  </p>
+                  <p class="dark:text-gray-400 text-500 text-xl">
+                    SUG Secretariat <p class="text-xs">STUDENT UNION BUILDING,</p><p class="text-[0.65rem]">
+                  Federal University of Technology, Owerri (FUTO),<br /> PMB 1526, Owerri, Imo State, Nigeria.
+                    </p>SUG Resource center 
+                  </p>
                 </div>
-              </div>
-              <div class="flex items-start">
+              </a>
+              <a href="socials.html" class="flex items-center flex-col text-center">
                 <svg
                   class="w-6 h-6 text-gray-400 mr-2"
                   fill="currentColor"
@@ -334,13 +370,32 @@
                   ></path>
                 </svg>
                 <div>
-                  <p class="text-sm font-medium text-gray-300">Call us:</p>
-                  <p class="text-gray-400">
-                    Need more information contact the PRO.
+                  <p class="text-sm font-medium dark:text-gray-300 text-gray-600">
+                    Call us:
                   </p>
-                  <p class="text-green-400">+234 905 141 9261</p>
+                  <p class="dark:text-gray-400 text-500 text-xl">
+                    Contact the PRO
+                  <p class="text-xs flex gap-2 justify-center items-center px-4 text-green-600 dark:text-green-400">
+                <i class="fa-brands fa-facebook-f text-[13px]"></i>
+                
+                <i class="fa-brands fa-instagram text-[15px]"></i>
+                
+                <i class="fa-brands fa-x-twitter text-[14px] "></i>
+                
+                <i class="fa-brands fa-whatsapp text-[14px]"></i>
+                
+                <span>
+                  @futosug
+                </span>
+                
+              </p><p class="text-[0.65rem]">
+                  Follow our Socials to know more about SUG FUTO.
+                    </p> Click for more
+                  </p>
                 </div>
-              </div>
+              </a>
+              
+              
             </div>
           </div>
         </div>
