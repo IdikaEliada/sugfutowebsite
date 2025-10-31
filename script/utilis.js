@@ -2,7 +2,7 @@ import {renderList} from './components/selectExcos.js';
 
 import {renderEventList} from './components/selectEvent.js';
 
-import { mapResources } from '../data/resources.min.js'
+import { mapResources, timetable, calendar, armsOfGov} from '../data/resources.min.js'
 
 import { renderFaculty } from './components/selectFaculty.js'
 
@@ -135,8 +135,8 @@ if(selectExcos){
   eventsGrid.innerHTML = displayExcoEvent(27)
   } else if (resourcesGrid) {
     
-     resourcesGrid.innerHTML = 
-     mapResources.renderHTML()
+     resourcesGrid.innerHTML=
+     `${timetable.renderHTML()} ${calendar.renderHTML()} ${mapResources.renderHTML()} ${armsOfGov.renderHTML()}`
   }
 
 // const menuIcon = document.getElementById('menu-icon');
@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
           eventsGrid.innerHTML = displayExcoEvent(e.id)
           
-          executiveIntro.innerHTML = `${e.name} is the ${showPosition(e.id)} elected Executives for the SUG Family, Federal University of Technology, Owerri and Were the SUG executives for the 20${e.id -2}/${e.id -1} Academic year. 
+          executiveIntro.innerHTML = `${e.name} is the ${showPosition(e.id)} elected Executives for the SUG Family, Federal University of Technology, Owerri and Were the SUG executives for the 20${e.id -2}/${e.id -1} timetable year. 
             Here are some of their achievements:`
           }
           }
