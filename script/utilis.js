@@ -135,9 +135,8 @@ if(selectExcos){
   eventsGrid.innerHTML = displayExcoEvent(27)
   } else if (resourcesGrid) {
     
-    const sss = mapResources.renderHTML
      resourcesGrid.innerHTML = 
-     sss
+     mapResources.renderHTML()
   }
 
 // const menuIcon = document.getElementById('menu-icon');
