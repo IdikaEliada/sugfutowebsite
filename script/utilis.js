@@ -2,6 +2,8 @@ import {renderList} from './components/selectExcos.js';
 
 import {renderEventList} from './components/selectEvent.js';
 
+import { mapResources } from '../data/resources.min.js'
+
 import { renderFaculty } from './components/selectFaculty.js'
 
 import {excosList} from './sections/executives/data/excosList.js'
@@ -47,6 +49,8 @@ const selectEvents = document.getElementById('select-events')
 const excosGrid = document.getElementById('executive-set-container')
 
 const eventsGrid = document.getElementById('events-set-container')
+
+const resourcesGrid = document.getElementById('resources-container')
 
 const excosSocials = document.getElementById('socials-header')
 
@@ -129,6 +133,11 @@ if(selectExcos){
   selectionBox.innerHTML = renderEventList();
   
   eventsGrid.innerHTML = displayExcoEvent(27)
+  } else if (resourcesGrid) {
+    
+    const sss = mapResources.renderHTML
+     resourcesGrid.innerHTML = 
+     sss
   }
 
 // const menuIcon = document.getElementById('menu-icon');
