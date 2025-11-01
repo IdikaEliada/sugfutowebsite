@@ -102,7 +102,7 @@ export const allPlacesInFuto = [
     description: "Modern academic facility housing the School of Information and Communication Technology with computer labs and lecture halls. Also includes CESPESS facilities",
     address: "Federal University of Technology Owerri Campus, Owerri, Imo State, Nigeria",
     mapLink: "https://maps.google.com/?q=FUTO+SICT+Building",
-    images: ["https://i.ibb.co/HDmJZR9N/48c5eedb22980d87e23ab0661a171807.webp"]
+    images: ["https://i.ibb.co/HDmJZR9N/48c5eedb22980d87e23ab0661a171807.webp", "https://i.ibb.co/b582LsyT/2034be87362b0a2b1e67c0941246d10f.webp"]
   },
   {
     name: "Sand Dredging Site",
