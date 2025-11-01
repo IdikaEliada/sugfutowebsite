@@ -4,7 +4,7 @@ export const allPlacesInFuto = [
     description: "Modern academic building housing the Department of Public Health Technology, part of the School of Health Technology",
     address: "Federal University of Technology Owerri, PMB 1526, Owerri, Imo State, Nigeria",
     mapLink: "https://maps.google.com/?q=Federal+University+of+Technology+Owerri+Public+Health+Building",
-    images: ["image1_public_health_tech.jpg"]
+    images: ["https://i.ibb.co/8n2m7rN0/pm-1754255252943-cmp.jpg"]
   },
   {
     name: "Environmental Health Sciences and Radiography Building",
@@ -60,7 +60,7 @@ export const allPlacesInFuto = [
     description: "Female student residential hall with modern amenities providing safe accommodation for undergraduate female students",
     address: "Federal University of Technology Owerri Campus, Owerri, Imo State, Nigeria",
     mapLink: "https://maps.google.com/?q=FUTO+Hostel+C",
-    images: ["image11_hostel_c.jpg"]
+    images: ["https://i.ibb.co/RGWjrMfh/pm-1754255248514-cmp.jpg"]
   },
   {
     name: "NDDC Hostel (Male Hostel)",
@@ -74,7 +74,7 @@ export const allPlacesInFuto = [
     description: "Male student residential facility providing accommodation for undergraduate male students on campus",
     address: "Federal University of Technology Owerri Campus, Owerri, Imo State, Nigeria",
     mapLink: "https://maps.google.com/?q=FUTO+Hostel+A",
-    images: ["image13_hostel_a.jpg"]
+    images: ["https://i.ibb.co/SXjjbj49/pm-1754255247497-cmp.jpg"]
   },
   {
     name: "Tetfund Hostel B (Male Hostel)",
@@ -95,21 +95,21 @@ export const allPlacesInFuto = [
     description: "Administrative building housing the university's procurement office and supply chain management operations",
     address: "Federal University of Technology Owerri Campus, Owerri, Imo State, Nigeria",
     mapLink: "https://maps.google.com/?q=FUTO+Public+Procurement+Building",
-    images: ["image18_public_procurement.jpg"]
+    images: ["https://i.ibb.co/tp3wrXtg/pm-1754255244191-cmp.jpg"]
   },
   {
     name: "School of Information and Communication Technology (SICT) Building",
     description: "Modern academic facility housing the School of Information and Communication Technology with computer labs and lecture halls. Also includes CESPESS facilities",
     address: "Federal University of Technology Owerri Campus, Owerri, Imo State, Nigeria",
     mapLink: "https://maps.google.com/?q=FUTO+SICT+Building",
-    images: ["image19_sict_cespess.jpg"]
+    images: ["https://i.ibb.co/HDmJZR9N/48c5eedb22980d87e23ab0661a171807.webp"]
   },
   {
     name: "Sand Dredging Site",
     description: "Active sand dredging and extraction site on FUTO campus, used for construction and development projects",
     address: "Federal University of Technology Owerri Campus, Owerri, Imo State, Nigeria",
     mapLink: "https://maps.google.com/?q=FUTO+Sand+Dredging+Site",
-    images: ["image20_sand_dredging.jpg"]
+    images: ["https://i.ibb.co/2rdtR6y/23716dd92ed808077b7e8e00c3d155ec.webp"]
   },
   {
     name: "Nuclear Energy Building",
