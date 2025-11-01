@@ -2,7 +2,7 @@ import {renderList} from './components/selectExcos.js';
 
 import {renderEventList} from './components/selectEvent.js';
 
-import { mapResources, timetable, calendar, armsOfGov, mapData} from '../data/resources.min.js'
+import { mapResources, timetable, calendar, armsOfGov, mapData, timetablesData} from '../data/resources.min.js'
 
 import { renderFaculty } from './components/selectFaculty.js'
 
@@ -153,9 +153,11 @@ if(selectExcos){
      
   } else  {
     // mapGrid.innerHTML = mapData.renderHTML()
-    // mapGrid.innerHTML 
-    renderResource(mapData, mapGrid)
-  }
+    // mapGrid.innerHTML
+    
+    renderResource(mapData, mapGrid) 
+    renderResource(timetablesData, timetablesGrid)
+  } 
 
 
 

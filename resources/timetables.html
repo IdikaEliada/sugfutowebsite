@@ -38,9 +38,7 @@
   
   <!-- AOC -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  
-  <!-- font awesome icons -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>  
   
   <!-- font awesome icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -223,42 +221,30 @@
         </li>
       </ol>
     </nav>
-  
-    <section class="mt-10 mb-32">
-      <div class="p-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-        <div class="mx-auto max-w-screen-sm text-center">
-          <h1 class="mb-4 text-3xl tracking-tight font-extrabold lg:text-5xl text-green-600 dark:text-green-500">Page is Under Construction</h1>
-          <p class="mb-4 text-xs  tracking-tight font-bold text-gray-900 md:text-md dark:text-white">The Student Union Government (SUG) of the Federal University of Technology, Owerri (FUTO) .</p>
-          <p class="mb-4 text-lg font-light text-gray-500 dark:text-gray-400" id="not-found-message"></p>
-          
-        </div>
+      
+      
+      <section class="timetable-section relative mb-32 mt-4">
+      <div class="sticky top-10 -mx-5 px-5 py-3 border-b-1 border-black/2 dark:border-white/2 backdrop-blur-md z-2">
+        <label class="block text-xl font-medium text-gray-800 dark:text-gray-400">Academic Timetable</label>
         
-        <div class="flex mt-2 gap-2 flex-col text-xs text-center">
-          <p class="">
-            We’re working hard behind the scenes to bring you: Rich, updated content
-          </p>
-          <p class="">
-            Interactive tools and resources and — <span class="text-green-600 dark:text-green-500 hover:underline">a seamless, mobile-friendly experience.</span>
-          </p>
+      </div>
+      
+      <div class="">
+        <div class="">
+          <div class="md:text-xl py-4 col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4" data-aos="fade-left" data-aos-delay="300">
+            View lecture timetables and academic dates for the 2025/2026 session.
+          </div>
+          <div id="timetables-resources-container" class ="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 xl:grid-cols-4" data-aos="fade-up" data-aos-delay="300"></div>
+
         </div>
-        
-        <ul class="flex gap-2 list-circle text-gray-500 dark:text-gray-400 mt-14 text-[12px] items-center justify-between text-center">
-          <li class="flex flex-col">
-            Return
-            <a href="index.html">to <span class="text-green-600 dark:text-green-400">Home</span></a>
-          </li>
-          <li class="flex flex-col">
-            Explore
-            <a href="about-us.html" class="text-green-600 dark:text-green-400">About Us</a></li>
-          <li class="flex flex-col">
-            Get Help 
-            <a href="socials.html" class="text-green-600 dark:text-green-400">Contact Us</a>
-          </li>
-        </ul>
       </div>
     </section>
+
+      
+  
+    
     <footer
-        class="fixed bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow-sm md:flex md:items-center md:justify-between md:p-6 dark:bg-green-900/5 dark:border-green-600/15"
+        class="absolute bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow-sm md:flex md:items-center md:justify-between md:p-6 dark:bg-green-900/5 dark:border-green-600/15"
       >
         <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
           >© 2025
@@ -395,7 +381,7 @@
       </footer>
   
   </main>
-
+  
   <div class="fixed z-4 top-0 bottom-0 left-0 right-0 flex items-center justify-center" id="preloader">
     <div class="executive-detail-container animate-spin">
       <img src="../images/aluta_logo.png" alt="20250616-210243" border="0" class="w-24 h-24 object-cover touch-auto overflow-auto object-top" loading='lazy' 
@@ -403,23 +389,13 @@
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
   <script src="../script/utilis.js" type="module"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
         AOS.init();
         
-        new TypeIt("#not-found-message", {
-          strings: ['is actively developing this section to <span class="text-green-800 dark:text-green-500 "> better serve every Futo student...</span>' ],
-          speed: 100,
-          startDelay: 100,
-          duration: 1500,
-          loop: true,
-        })
-      	.delete(97, {instant: false})
-      	.type("Under development ")
-      	.type(`<span class="text-green-800 dark:text-green-500"> This page is being built for you — stay tuned!.</span>`)
-      	.delete(1)
-      	.go();
+        
       });
   </script>
   <!-- Bootstrap JS -->
