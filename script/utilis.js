@@ -2,7 +2,7 @@ import {renderList} from './components/selectExcos.js';
 
 import {renderEventList} from './components/selectEvent.js';
 
-import { mapResources, timetable, calendar, armsOfGov} from '../data/resources.min.js'
+import { mapResources, timetable, calendar, armsOfGov, mapData} from '../data/resources.min.js'
 
 import { renderFaculty } from './components/selectFaculty.js'
 
@@ -15,6 +15,8 @@ import {displayExcoEvent} from './sections/executives/renderEvents.js';
 import displayExcoSocials from './sections/socials/header.js';
 
 import loadingAnimation from './libs/loadingImg.js';
+
+import renderResource from './libs/renderResource.js';
 
 import {setupReadMore} from './sections/executives/about-exco.js'
 
@@ -51,6 +53,14 @@ const excosGrid = document.getElementById('executive-set-container')
 const eventsGrid = document.getElementById('events-set-container')
 
 const resourcesGrid = document.getElementById('resources-container')
+
+const mapGrid = document.getElementById('map-resources-container')
+
+const calendarGrid = document.getElementById('calendar-resources-container')
+
+const timetablesGrid = document.getElementById('timetables-resources-container')
+
+const armsOfGovGrid = document.getElementById('AOG-resources-container')
 
 const excosSocials = document.getElementById('socials-header')
 
@@ -135,9 +145,19 @@ if(selectExcos){
   eventsGrid.innerHTML = displayExcoEvent(27)
   } else if (resourcesGrid) {
     
-     resourcesGrid.innerHTML=
-     `${timetable.renderHTML()} ${calendar.renderHTML()} ${mapResources.renderHTML()} ${armsOfGov.renderHTML()}`
+    const allResources = [timetable, calendar, mapResources, armsOfGov]
+
+    allResources.forEach(resource => {
+      resourcesGrid.insertAdjacentHTML("beforeend", resource.renderHTML())
+    })
+     
+  } else  {
+    // mapGrid.innerHTML = mapData.renderHTML()
+    // mapGrid.innerHTML 
+    renderResource(mapData, mapGrid)
   }
+
+
 
 // const menuIcon = document.getElementById('menu-icon');
     
