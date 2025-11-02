@@ -12,7 +12,7 @@ import {displayExcoSet} from './sections/executives/renderExcoSet.js';
 
 import {displayExcoEvent} from './sections/executives/renderEvents.js';
 
-import { timetableSearch } from './libs/fuzzySearch.js';
+import { timetableSearch, mapSearch } from './libs/fuzzySearch.js';
 
 import displayExcoSocials from './sections/socials/header.js';
 
@@ -45,6 +45,7 @@ const isMenuOpen = menuIcon.classList.contains('fa-bars')
 // const isIcon = themeIcon.classList.contains('fa-moon')
 
 const searchInput = document.getElementById('timetable-search');
+const searchInputMap = document.getElementById('map-search');
 const resultsInfo = document.getElementById('search-results-info');
   
 const excosDropDownList = document.getElementById('selection-box')
@@ -151,6 +152,9 @@ if(selectExcos){
     // mapGrid.innerHTML
     
     renderResource(mapData, mapGrid) 
+    setTimeout(() => {
+      mapSearch.setupSearch(searchInputMap, resultsInfo, mapGrid);
+    }, 100);
     renderResource(timetablesData, timetablesGrid)
     setTimeout(() => {
       timetableSearch.setupSearch(searchInput, resultsInfo, timetablesGrid);

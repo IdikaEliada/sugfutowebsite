@@ -1,5 +1,6 @@
 
 import { allTimetables } from "../../data/timetables.js";
+import { allPlacesInFuto } from "../../data/places_in_futo.js";
 
 function normalizeText(text) {
   return text
@@ -10,8 +11,9 @@ function normalizeText(text) {
 }
 
 class Search {
-  constructor(data){
+  constructor(data, item){
     this.data = data
+    this.item = item
   }
 
   match(searchQuery, textToSearch){
@@ -82,10 +84,10 @@ class Search {
     
     // Update results info
     if (visibleCount === 0) {
-      output.textContent = `No timetables found for "${query}"`;
+      output.textContent = `No ${this.item}s found for "${query}"`;
       output.classList.add('text-red-600', 'dark:text-red-400');
     } else {
-      output.textContent = `Found ${visibleCount} timetable${visibleCount !== 1 ? 's' : ''}`;
+      output.textContent = `Found ${visibleCount} ${this.item}${visibleCount !== 1 ? 's' : ''}`;
       output.classList.remove('text-red-600', 'dark:text-red-400');
     }
     });
@@ -116,7 +118,89 @@ class TimetableSearch extends Search{
   }
 }
 
-const timetableSearch = new TimetableSearch(allTimetables)
+class MapSearch extends Search{
+  filterData(allPlacesInFuto, query) {
+    if (!query.trim()) {
+      return data;
+    }
+
+    return allPlacesInFuto.filter(place => {
+      return this.match(query, place.name) 
+       || this.match(query, place.description) 
+    
+    });
+  }
+
+  setupSearch(input, output, source) {
+  
+    if (!input || !source) {
+      return;
+    }
+  
+  
+    const allCards = Array.from(source.querySelectorAll('.events-container'));
+  
+  // Add event listener for input changes
+    input.addEventListener('input', (e) => {
+      const query = e.target.value;
+    
+    // Show all cards if search is empty
+      if (!query.trim()) {
+        allCards.forEach(card => {
+          card.style.display = '';
+        });
+        output.textContent = '';
+        return;
+      }
+    
+    // Filter and display cards
+      let visibleCount = 0;
+    
+      allCards.forEach(card => {
+      // Get the faculty name from the card
+        const nameElement = card.querySelector('h5');
+        const descriptionElement = card.querySelector('p');
+      
+        if (!nameElement) {
+          card.style.display = 'none';
+          return;
+        }
+      
+        const nameText = nameElement.textContent;
+        const descriptionText = descriptionElement ? descriptionElement.textContent : '';
+      
+      // Check if query matches faculty or description
+      if (this.match(query, nameText) || this.match(query, descriptionText)) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    
+    // Update results info
+    if (visibleCount === 0) {
+      output.textContent = `No ${this.item}s found for "${query}"`;
+      output.classList.add('text-red-600', 'dark:text-red-400');
+    } else {
+      output.textContent = `Found ${visibleCount} ${this.item}${visibleCount !== 1 ? 's' : ''}`;
+      output.classList.remove('text-red-600', 'dark:text-red-400');
+    }
+    });
+  
+  // Optional: Add clear button functionality
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      input.value = '';
+      input.dispatchEvent(new Event('input'));
+    }
+  });
+  }
+}
+
+const mapSearch = new MapSearch(allPlacesInFuto, "place")
+
+const timetableSearch = new TimetableSearch(allTimetables, "timetable" )
 
 
-export { timetableSearch };
+export { timetableSearch, mapSearch };
