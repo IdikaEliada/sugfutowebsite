@@ -83,7 +83,7 @@
 <body style="font-family: 'Sora';" class="px-5 mt-12 bg-[#eeeeee] dark:bg-[#111111] bg-cover bg-center bg-image dark:text-white relative pb-5 overflow-x-hidden max-w-[100vw]">
   
   <header class="z-50 fixed top-0 right-0 left-0 px-4 py-2 border-b-1 backdrop-blur-sm flex justify-between bg-white/10 dark:bg-green-900/5 dark:border-black border-white backdrop-blur-sm" >
-    <a href="index.html" class="flex items-center gap-2">
+    <a href="../index.html" class="flex items-center gap-2">
       <img src="https://i.ibb.co/MxBKdRnL/20251009-224316.png" class="w-8 h-8" alt="SUG FUTO Logo" loading="eager">
       <span class="font-bold text-xl text-gray-900 dark:text-white">
         <span class="md:hidden">FUTO SUG</span>
@@ -108,7 +108,7 @@
         class="z-10 hidden absolute right-0 mt-2 w-56 origin-top-right rounded-bl-md bg-[#eeeeee] dark:bg-[#111111] text-gray-800 dark:text-gray-400 shadow-lg ring-1 ring-black/5 backdrop-blur-sm border-s-1 border-b-1 border-white dark:border-black">
         <div class="py-1" role="menu">
           
-          <a href="index.html" class="block px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" role="menuitem">
+          <a href="../index.html" class="block px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" role="menuitem">
             <div class="flex items-center gap-2">
               <div class="flex justify-center items-center rounded-full px-3 py-2 w-1 h-4">
                 <i class='fa fa-home fa-solid text-xs'></i>
@@ -117,7 +117,7 @@
             </div>
           </a>
           
-          <a href="about-us.html" class="block px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" role="menuitem">
+          <a href="../about-us.html" class="block px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" role="menuitem">
             <div class="flex items-center gap-2">
               <div class="flex justify-center items-center rounded-full px-3 py-2 w-1 h-4">
                 <i class='fa fa-circle-info fa-solid text-xs'></i>
@@ -126,7 +126,7 @@
             </div>
           </a>
           
-          <a href="achievements.html" class="block px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" role="menuitem">
+          <a href="../achievements.html" class="block px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" role="menuitem">
             <div class="flex items-center gap-2">
               <div class="flex justify-center items-center rounded-full px-3 py-2 w-1 h-4">
                 <i class='fa-solid fa-star text-xs'></i>
@@ -135,7 +135,7 @@
             </div>
           </a>
           
-          <a href="index.html#faq" class="block px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" role="menuitem">
+          <a href="../index.html#faq" class="block px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" role="menuitem">
             <div class="flex items-center gap-2">
               <div class="flex justify-center items-center rounded-full px-3 py-2 w-1 h-4">
                 <i class='fa-solid fa-circle-question text-xs'></i>
@@ -144,7 +144,7 @@
             </div>
           </a>
           
-          <a href="resources/index.html" class="block px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" role="menuitem">
+          <a href="./index.html" class="block px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" role="menuitem">
             <div class="flex items-center gap-2">
               <div class="flex justify-center items-center rounded-full px-3 py-2 w-1 h-4">
                 <i class='fa-solid fa-bookmark text-xs'></i>
@@ -168,7 +168,7 @@
           
           <div class="border-t border-gray-300 dark:border-gray-600 my-1"></div>
           
-          <a href="socials.html" role="none"class="flex justify-between items-center">
+          <a href="../socials.html" role="none"class="flex justify-between items-center">
             <button type="submit" class="block w-full px-4 py-2 text-left text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" role="menuitem">
               Contact Us
             </button>
@@ -412,7 +412,12 @@
     document.addEventListener("DOMContentLoaded", function() {
       AOS.init();
       
-      
+      const footer = document.querySelector('footer')
+
+      if(document.body.clientHeight < 500){
+        footer.classList.remove('absolute')
+        footer.classList.add('fixed')
+      }
     });
   </script>
   <!-- Bootstrap JS -->
