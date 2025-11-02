@@ -20,6 +20,8 @@ import loadingAnimation from './libs/loadingImg.js';
 
 import renderResource from './libs/renderResource.js';
 
+import deploymentMessage from './libs/emptyPage.js';
+
 import {setupReadMore} from './sections/executives/about-exco.js'
 
 import { submitApplication } from './libs/applyForSA.js'
@@ -79,6 +81,8 @@ const facultyList = document.getElementById('faculties')
 
 const applicationForm = document.getElementById('application-form')
 
+const emptyPage = document.getElementById('page-underdevelopment')
+
 menuIcon.addEventListener('click', ()=>{
   if(isMenuOpen){
     menuIcon.classList.toggle('fa-bars')
@@ -120,6 +124,10 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () 
   changeThemeIcon()
   systemDefault()
 });
+
+if(emptyPage){
+  deploymentMessage(emptyPage, "../")
+}
 
 if(selectExcos){
   selectExcos.addEventListener('click', ()=>{
