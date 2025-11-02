@@ -223,10 +223,11 @@
     </nav>
       
       
-    <section class="timetable-section relative mb-32 mt-4">
-      <div class="sticky top-10 -mx-5 px-5 py-3 border-b-1 border-black/2 dark:border-white/2 backdrop-blur-md z-2">
-        <label class="block text-xl font-medium text-gray-800 dark:text-gray-400">Academic Calendar</label>
-        
+    <section class="timetable-section relative mb-32 ">
+      <div class="py-3 border-b-1 border-black/2 dark:border-white/2 backdrop-blur-md z-2">
+        <span class="block text-xl font-medium text-gray-800 dark:text-gray-400">Academic Calendar <br/> 2025/2026 Session</span>
+        <br/>
+        View exam schedules, matriculation period, holidays, and key academic dates for the 2025/2026 session. 
       </div>
       
       <section id="search-bar" class="mx-2">
@@ -248,9 +249,7 @@
 
       <div class="">
         <div class="">
-          <div class="md:text-xl py-4 col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4" data-aos="fade-left" data-aos-delay="300">
-            View exam schedules, matriculation period, holidays, and key academic dates for the 2025/2026 session.
-          </div>
+          
           <div id="calendar-resources-container" class ="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 xl:grid-cols-4" data-aos="fade-up" data-aos-delay="300"></div>
 
         </div>
@@ -414,7 +413,7 @@
       
       const footer = document.querySelector('footer')
 
-      if(document.body.clientHeight < 500){
+      if(document.body.clientHeight < 750){
         footer.classList.remove('absolute')
         footer.classList.add('fixed')
       } else {
