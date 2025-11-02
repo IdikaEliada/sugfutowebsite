@@ -36,7 +36,7 @@ export default function displayExcoSocials( executivesSet) {
   
                 </a>
                 
-                <a href="https://x.com/futo_sug?t=wi9O-4mX5qfuZRp0uqPiXQ&s=09" class="inline-flex items-center py-2 text-sm font-medium text-center text-white ">
+                <a href="https://x.com/asesfuto" class="inline-flex items-center py-2 text-sm font-medium text-center text-white ">
                   <svg class="w-8 h-8 p-0.75 bg-${excoSet.color}-700 rounded-lg hover:bg-${excoSet.color}-800 focus:ring-4 focus:outline-none focus:ring-${excoSet.color}-300 dark:bg-${excoSet.color}-600 dark:hover:bg-${excoSet.color}-700 dark:focus:ring-${excoSet.color}-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M13.795 10.533 20.68 2h-3.073l-5.255 6.517L7.69 2H1l7.806 10.91L1.47 22h3.074l5.705-7.07L15.31 22H22l-8.205-11.467Zm-2.38 2.95L9.97 11.464 4.36 3.627h2.31l4.528 6.317 1.443 2.02 6.018 8.409h-2.31l-4.934-6.89Z"/>
                 </svg>
