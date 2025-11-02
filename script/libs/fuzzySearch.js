@@ -137,7 +137,7 @@ class MapSearch extends Search{
       return;
     }
   
-  
+    const allCards = Array.from(source.querySelectorAll('.map-container'));
   // Add event listener for input changes
     input.addEventListener('input', (e) => {
       const query = e.target.value;
