@@ -18,18 +18,6 @@ export const allTimetables = [
     name: "2025-2026 SOHT Harmattan Lecture Timetable"
   },
   {
-    faculty: "SoBS",
-    path: "School of Biological Sciences",
-    description: "2025/2026 Harmattan Semester Lecture Timetable for School of Biological Sciences",
-    name: "2025-2026 SoBS Harmattan Lecture Timetable"
-  },
-  {
-    faculty: "SESET",
-    path: "School of Engineering and Engineering Technology",
-    description: "2025/2026 Harmattan Semester Lecture Timetable for SESET",
-    name: "2025-2026 SESET Harmattan Lecture Timetable"
-  },
-  {
     faculty: "SEET",
     path: "../data/PDFs/2025-2026 Harmattan Sem. Lecture Timetable for University and SEET Common Courses.pdf",
     description: "2025-2026 Harmattan Semester Lecture Timetable for University and SEET Common Courses",
@@ -51,6 +39,12 @@ export const allTimetables = [
     faculty: "SOES",
     path: "../data/PDFs/2025-2026 SOES HARMATTAN LECTURE TIME TABLE.pdf",
     description: "2025/2026 Harmattan Semester Lecture Timetable for SOES",
+    name: "2025-2026 SOES Harmattan Lecture Timetable"
+  },
+  {
+    faculty: "SESET",
+    path: "../data/PDFs/SESET_DRAFT _(01)_ 2025_2026 HARMATTAN LECTURE TIMETABLE (AOA) (1).docx",
+    description: "2025/2026 Harmattan Semester Lecture Timetable for SESET",
     name: "2025-2026 SOES Harmattan Lecture Timetable"
   }
 ];

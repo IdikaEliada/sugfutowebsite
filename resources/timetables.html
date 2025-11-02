@@ -223,12 +223,29 @@
     </nav>
       
       
-      <section class="timetable-section relative mb-32 mt-4">
+    <section class="timetable-section relative mb-32 mt-4">
       <div class="sticky top-10 -mx-5 px-5 py-3 border-b-1 border-black/2 dark:border-white/2 backdrop-blur-md z-2">
         <label class="block text-xl font-medium text-gray-800 dark:text-gray-400">Academic Timetable</label>
         
       </div>
       
+      <section id="search-bar">
+        <div class="mt-4 mb-2">
+          <div class="relative">
+            <input 
+              type="text" 
+              id="timetable-search" 
+              placeholder="Search timetables (e.g., FUTO, SICT, SOHT...)" 
+              class="w-full px-4 py-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-green-500 focus:border-green-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+            />
+            <svg class="absolute left-3 top-2.5 w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+            </svg>
+          </div>
+          <div id="search-results-info" class="mt-2 text-sm text-gray-600 dark:text-gray-400"></div>
+        </div>
+      </section>
+
       <div class="">
         <div class="">
           <div class="md:text-xl py-4 col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4" data-aos="fade-left" data-aos-delay="300">
@@ -393,10 +410,10 @@
   <script src="../script/utilis.js" type="module"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-        AOS.init();
-        
-        
-      });
+      AOS.init();
+      
+      
+    });
   </script>
   <!-- Bootstrap JS -->
   

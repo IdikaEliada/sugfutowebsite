@@ -12,6 +12,8 @@ import {displayExcoSet} from './sections/executives/renderExcoSet.js';
 
 import {displayExcoEvent} from './sections/executives/renderEvents.js';
 
+import { timetableSearch } from './libs/fuzzySearch.js';
+
 import displayExcoSocials from './sections/socials/header.js';
 
 import loadingAnimation from './libs/loadingImg.js';
@@ -42,6 +44,9 @@ const isMenuOpen = menuIcon.classList.contains('fa-bars')
 
 // const isIcon = themeIcon.classList.contains('fa-moon')
 
+const searchInput = document.getElementById('timetable-search');
+const resultsInfo = document.getElementById('search-results-info');
+  
 const excosDropDownList = document.getElementById('selection-box')
 
 const selectExcos = document.getElementById('select-excos')
@@ -66,7 +71,7 @@ const excosSocials = document.getElementById('socials-header')
 
 const dropdownButton = document.getElementById('dropdownButton');
 
-const applyForSADiv = document.getElementById('application-for-sa')
+//const applyForSADiv = document.getElementById('application-for-sa')
 
 const facultyList = document.getElementById('faculties')
 
@@ -88,16 +93,6 @@ function isDarkMode() {
   return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
    }
 
-// function systemDefault() {
-//   !isDarkMode() ? HTML.dataset.theme = "light" : HTML.dataset.theme = "dark";
-//   };
-
-// function changeThemeIcon() {
-//   if(isIcon){
-//     themeIcon.classList.toggle('fa-sun')
-//     themeIcon.classList.toggle('fa-moon')
-//   }
-// }
 
 function getIdNumber(element) {
   const parts = element.split('-');
@@ -157,6 +152,9 @@ if(selectExcos){
     
     renderResource(mapData, mapGrid) 
     renderResource(timetablesData, timetablesGrid)
+    setTimeout(() => {
+      timetableSearch.setupSearch(searchInput, resultsInfo, timetablesGrid);
+    }, 100);
   } 
 
 
