@@ -57,6 +57,8 @@ const selectExcos = document.getElementById('select-excos')
 
 const selectEvents = document.getElementById('select-events')
 
+const calendarSelector = document.getElementById('calendar-select')
+
 const excosGrid = document.getElementById('executive-set-container')
 
 const eventsGrid = document.getElementById('events-set-container')
@@ -169,6 +171,9 @@ if(selectExcos){
       timetableSearch.setupSearch(searchInput, resultsInfo, timetablesGrid);
     }, 100);
     renderResource(calendarData, calendarGrid)
+    calendarSelector.onchange = () => {
+      console.log(calendarSelector.value)
+    }
     setTimeout(() => {
       timetableSearch.setupSearch(searchInputCal, resultsInfo, calendarGrid);
     }, 100);
