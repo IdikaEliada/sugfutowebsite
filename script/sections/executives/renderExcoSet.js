@@ -15,7 +15,7 @@ export function displayExcoSet( executivesSet) {
       if(!excoSet.members || excoSet.members === null){
         (!excoSet.group || excoSet.group === null) ?
           membersHTML += `
-          <div class="flex-1 justify-center align-center max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700 text-center">
+          <div class="flex-1 justify-center align-center  p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700 text-center">
           <div class="executive-detail-container">
             <img src=${excoSet.logo != null? excoSet.logo : `images/aluta_logo.png`} alt="20250616-210243" border="0" class="w-full h-full object-cover touch-auto overflow-auto object-top" loading='lazy' 
             />
@@ -27,7 +27,7 @@ export function displayExcoSet( executivesSet) {
         </div>`
         : 
         membersHTML += `
-        <div class="flex flex-col max-w-sm bg-red/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/10 dark:border-gray-700  w-full backdrop-blur-sm">
+        <div class="flex flex-col  bg-red/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/10 dark:border-gray-700  w-full backdrop-blur-sm">
         <div class="max-h-42 overflow-hidden">
           <img src=${excoSet.group.image}
           class="rounded-t-lg"
@@ -50,7 +50,7 @@ export function displayExcoSet( executivesSet) {
           
     
           membersHTML += `
-          <div class="executives-container max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700" id=${excoSet.name}>
+          <div class="executives-container  p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700" id=${excoSet.name}>
             <div class="executive-detail-container flower bg-linear-30 from-${excoSet.color}-500 to-${excoSet.color}-800 animate-spin">
                 <img src=${member.image != null? member.image : excoSet.logo} alt="20250616-210243" border="0" class="w-full h-full object-cover touch-auto overflow-auto object-top" loading='lazy' 
                 />

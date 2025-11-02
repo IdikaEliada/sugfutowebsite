@@ -15,7 +15,7 @@ export function displayExcoEvent( executivesSet) {
       if(!excoSet.events || excoSet.events === null){
         (!excoSet.image || excoSet.image=== null) ?
           eventsHTML += `
-          <div class="flex-1 justify-center align-center max-w-sm p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700 text-center">
+          <div class="flex-1 justify-center align-center  p-6 bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700 text-center">
           <div class="executive-detail-container">
             <img src=${excoSet.logo != null? excoSet.logo : `images/aluta_logo.png`} alt="20250616-210243" border="0" class="w-full h-full object-cover touch-auto overflow-auto object-top" loading='lazy' 
             />
@@ -27,7 +27,7 @@ export function displayExcoEvent( executivesSet) {
         </div>`
         : 
         eventsHTML += `
-        <div class="flex flex-col max-w-sm bg-red/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/10 dark:border-gray-700  w-full backdrop-blur-sm">
+        <div class="flex flex-col  bg-red/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/10 dark:border-gray-700  w-full backdrop-blur-sm">
         <div class="max-h-42 overflow-hidden">
           <img src=${excoSet.group.image}
           class="rounded-t-lg"
@@ -50,7 +50,7 @@ export function displayExcoEvent( executivesSet) {
           
     
           eventsHTML += `
-          <div class="events-container max-w-sm bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700" id=${event.name}>
+          <div class="events-container  bg-white/15 border border-gray-200 rounded-lg shadow-sm dark:bg-${excoSet.color}-800/15 dark:border-gray-700" id=${event.name}>
             <div class="events-detail-container bg-linear-30 from-${excoSet.color}-500 to-${excoSet.color}-800 min-h-38 max-h-42 overflow-hidden rounded-t-lg">
                 <img src=${event.image != null? event.image : excoSet.logo} alt=${event.name} border="0" class="w-full h-full object-cover touch-auto overflow-auto object-top rounded-t-lg" loading='lazy' 
                 />

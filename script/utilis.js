@@ -46,6 +46,7 @@ const isMenuOpen = menuIcon.classList.contains('fa-bars')
 
 const searchInput = document.getElementById('timetable-search');
 const searchInputMap = document.getElementById('map-search');
+const searchInputCal = document.getElementById('calendar-search');
 const resultsInfo = document.getElementById('search-results-info');
   
 const excosDropDownList = document.getElementById('selection-box')
@@ -156,6 +157,10 @@ if(selectExcos){
       mapSearch.setupSearch(searchInputMap, resultsInfo, mapGrid);
     }, 100);
     renderResource(timetablesData, timetablesGrid)
+    setTimeout(() => {
+      timetableSearch.setupSearch(searchInput, resultsInfo, timetablesGrid);
+    }, 100);
+    renderResource(calendarData, calendarGrid)
     setTimeout(() => {
       timetableSearch.setupSearch(searchInput, resultsInfo, timetablesGrid);
     }, 100);
