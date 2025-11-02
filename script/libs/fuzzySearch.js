@@ -158,8 +158,9 @@ class MapSearch extends Search{
       allCards.forEach(card => {
         const linkDiv = card.querySelector('.events-container');
         const contentDiv = linkDiv.querySelector('a')
+        const descriptionElement = linkDiv.querySelector('p');
         const nameElement = contentDiv.querySelector('h5');
-        const descriptionElement = contentDiv.querySelector('p');
+        
         // const nameElement = card.querySelector('h5');
         // const descriptionElement = card.querySelector('p');
       

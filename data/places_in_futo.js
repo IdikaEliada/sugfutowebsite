@@ -106,7 +106,7 @@ export const allPlacesInFuto = [
   },
   {
     name: "School of Information and Communication Technology (SICT) Building",
-    description: "Modern academic facility housing the School of Information and Communication Technology with computer labs and lecture halls. Also includes CESPESS facilities",
+    description: "Modern academic facility housing the School of Information and Communication Technology with computer labs and lecture halls. Also includes the department of software engineering",
     address: "Federal University of Technology Owerri Campus, Owerri, Imo State, Nigeria",
     mapLink: "https://maps.app.goo.gl/BqB86a4x4mxLJrzA7",
     images: ["https://i.ibb.co/HDmJZR9N/48c5eedb22980d87e23ab0661a171807.webp", "https://i.ibb.co/b582LsyT/2034be87362b0a2b1e67c0941246d10f.webp", "https://i.ibb.co/mr9yHqj3/48c5eedb22980d87e23ab0661a171807.webp", "https://i.ibb.co/fJPFZBb/2267039237032d7b010b5a26c194b741.webp", "https://i.ibb.co/RGdDKVbv/2034be87362b0a2b1e67c0941246d10f.webp", "https://i.ibb.co/DX7yVFh/b70712eb54b766fce5b6f54749da2a28.webp","https://i.ibb.co/zhbPsBPx/cfc84c89cd9b71049723ad989fba248b.webp","https://i.ibb.co/hFFZSSVQ/62bce6ac7dfc7006f4c6a1ed5915cf24.webp"]
