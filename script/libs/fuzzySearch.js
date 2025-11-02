@@ -1,6 +1,7 @@
 
 import { allTimetables } from "../../data/timetables.js";
 import { allPlacesInFuto } from "../../data/places_in_futo.js";
+import { allActivities } from "../../data/activities.js";
 
 function normalizeText(text) {
   return text
@@ -201,9 +202,26 @@ class MapSearch extends Search{
   }
 }
 
+class CalendarSearch extends Search{
+  filterData(allActivities, query) {
+    if (!query.trim()) {
+      return data;
+    }
+
+    return allActivities.filter(timetable => {
+      return this.match(query, timetable.name) 
+       || this.match(query, timetable.description) 
+         || this.match(query, timetable.faculty)
+    
+    });
+  }
+}
+
 const mapSearch = new MapSearch(allPlacesInFuto, "place")
 
 const timetableSearch = new TimetableSearch(allTimetables, "timetable" )
 
+const calendarSearch = new CalendarSearch(allActivities, "timetable" )
 
-export { timetableSearch, mapSearch };
+
+export { timetableSearch, mapSearch, calendarSearch };

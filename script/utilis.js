@@ -2,7 +2,7 @@ import {renderList} from './components/selectExcos.js';
 
 import {renderEventList} from './components/selectEvent.js';
 
-import { mapResources, timetable, calendar, armsOfGov, mapData, timetablesData} from '../data/resources.min.js'
+import { mapResources, timetable, calendar, armsOfGov, mapData, timetablesData, calendarData} from '../data/resources.min.js'
 
 import { renderFaculty } from './components/selectFaculty.js'
 
@@ -12,7 +12,7 @@ import {displayExcoSet} from './sections/executives/renderExcoSet.js';
 
 import {displayExcoEvent} from './sections/executives/renderEvents.js';
 
-import { timetableSearch, mapSearch } from './libs/fuzzySearch.js';
+import { timetableSearch, mapSearch, calendarSearch } from './libs/fuzzySearch.js';
 
 import displayExcoSocials from './sections/socials/header.js';
 
@@ -170,7 +170,7 @@ if(selectExcos){
     }, 100);
     renderResource(calendarData, calendarGrid)
     setTimeout(() => {
-      timetableSearch.setupSearch(searchInput, resultsInfo, timetablesGrid);
+      timetableSearch.setupSearch(searchInputCal, resultsInfo, calendarGrid);
     }, 100);
   } 
 
