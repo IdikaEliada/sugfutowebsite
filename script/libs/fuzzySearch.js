@@ -138,8 +138,6 @@ class MapSearch extends Search{
     }
   
   
-    const allCards = Array.from(source.querySelectorAll('.events-container'));
-  
   // Add event listener for input changes
     input.addEventListener('input', (e) => {
       const query = e.target.value;
@@ -148,6 +146,7 @@ class MapSearch extends Search{
       if (!query.trim()) {
         allCards.forEach(card => {
           card.style.display = '';
+          console.log(card.id)
         });
         output.textContent = '';
         return;
@@ -157,9 +156,12 @@ class MapSearch extends Search{
       let visibleCount = 0;
     
       allCards.forEach(card => {
-      // Get the faculty name from the card
-        const nameElement = card.querySelector('h5');
-        const descriptionElement = card.querySelector('p');
+        const linkDiv = card.querySelector('.events-container');
+        const contentDiv = linkDiv.querySelector('a')
+        const nameElement = contentDiv.querySelector('h5');
+        const descriptionElement = contentDiv.querySelector('p');
+        // const nameElement = card.querySelector('h5');
+        // const descriptionElement = card.querySelector('p');
       
         if (!nameElement) {
           card.style.display = 'none';
@@ -169,7 +171,7 @@ class MapSearch extends Search{
         const nameText = nameElement.textContent;
         const descriptionText = descriptionElement ? descriptionElement.textContent : '';
       
-      // Check if query matches faculty or description
+
       if (this.match(query, nameText) || this.match(query, descriptionText)) {
         card.style.display = '';
         visibleCount++;
