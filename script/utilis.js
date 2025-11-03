@@ -175,7 +175,7 @@ if(selectExcos){
       console.log(calendarSelector.value)
     }
     setTimeout(() => {
-      timetableSearch.setupSearch(searchInputCal, resultsInfo, calendarGrid);
+      calendarSearch.setupSearch(searchInputCal, resultsInfo, calendarGrid);
     }, 100);
   } 
 

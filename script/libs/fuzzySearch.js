@@ -147,7 +147,7 @@ class MapSearch extends Search{
       if (!query.trim()) {
         allCards.forEach(card => {
           card.style.display = '';
-          console.log(card.id)
+          
         });
         output.textContent = '';
         return;
@@ -166,7 +166,7 @@ class MapSearch extends Search{
         // const descriptionElement = card.querySelector('p');
       
         if (!nameElement) {
-          card.style.display = 'none';
+          card.style.display = '';
           return;
         }
       
@@ -208,12 +208,94 @@ class CalendarSearch extends Search{
       return data;
     }
 
-    return allActivities.filter(timetable => {
-      return this.match(query, timetable.name) 
-       || this.match(query, timetable.description) 
-         || this.match(query, timetable.faculty)
+    return allActivities.filter(semester => {
+      semester.timetables = semester.timetables.filter(timetable => {
+        timetable.activities = timetable.activities.filter(activity => {
+          return this.match(query, activity.description) 
+          || this.match(query, activity.type) || this.match(query, activity.week)
+          || this.match(query, activity.startDate) || this.match(query, activity.endDate)
+          || this.match(query, activity.location);
+        });
+        return timetable.activities.length > 0;
+      });
+      return semester.timetables.length > 0;
     
     });
+  }
+
+  setupSearch(input, output, source) {
+  
+    if (!input || !source) {
+      return;
+    }
+  
+    const allCards = Array.from(source.querySelectorAll('.calendar-container'));
+  // Add event listener for input changes
+    input.addEventListener('input', (e) => {
+      const query = e.target.value;
+    
+    // Show all cards if search is empty
+      if (!query.trim()) {
+        allCards.forEach(card => {
+          card.style.display = '';
+          
+        });
+        output.textContent = '';
+        return;
+      }
+    
+    // Filter and display cards
+      let visibleCount = 0;
+    
+      allCards.forEach(card => {
+        const dateElement = card.querySelector('div > div > time');
+        const typeElement = card.querySelector('div > span');
+        const nameElement = card.querySelector('div > h4');
+        const weekElement = card.querySelector('div > p');
+        const locationElement = card.querySelector('div > a');
+        
+        // const nameElement = card.querySelector('h5');
+        // const descriptionElement = card.querySelector('p');
+      
+        if (!nameElement) {
+          card.style.display = '';
+          return;
+        }
+        
+        const dateText = dateElement ? dateElement.textContent : '';
+        const nameText = nameElement.textContent;
+        const typeText = typeElement ? typeElement.textContent : '';
+        const weekText = weekElement ? weekElement.textContent : '';
+        const locationText = locationElement ? locationElement.textContent : '';
+      
+
+      if (this.match(query, nameText) || this.match(query, dateText) 
+        || this.match(query, typeText) || this.match(query, weekText) 
+        || this.match(query, locationText)) {
+        card.style.display = '';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    
+    // Update results info
+    if (visibleCount === 0) {
+      output.textContent = `No ${this.item}s found for "${query}"`;
+      output.classList.add('text-red-600', 'dark:text-red-400');
+    } else {
+      output.textContent = `Found ${visibleCount} ${this.item}${visibleCount !== 1 ? 's' : ''}`;
+      output.classList.remove('text-red-600', 'dark:text-red-400');
+    }
+    });
+  
+  // Optional: Add clear button functionality
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      input.value = '';
+      input.dispatchEvent(new Event('input'));
+    }
+  });
   }
 }
 
@@ -221,7 +303,7 @@ const mapSearch = new MapSearch(allPlacesInFuto, "place")
 
 const timetableSearch = new TimetableSearch(allTimetables, "timetable" )
 
-const calendarSearch = new CalendarSearch(allActivities, "timetable" )
+const calendarSearch = new CalendarSearch(allActivities, "activity" )
 
 
 export { timetableSearch, mapSearch, calendarSearch };
