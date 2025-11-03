@@ -172,8 +172,7 @@ if(selectExcos){
     }, 100);
     renderResource(calendarData, calendarGrid)
     calendarSelector.onchange = () => {
-      calendarGrid.innerHTML = `
-        ${calendarData.renderHTML(calendarSelector.value)}`
+      calendar
     }
     setTimeout(() => {
       calendarSearch.setupSearch(searchInputCal, resultsInfo, calendarGrid);
