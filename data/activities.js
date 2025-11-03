@@ -363,30 +363,3 @@ export const allActivities = [
   },
 ];
 
-// Helper function to get all activities
-export const getAllActivities = () => {
-  return [
-    ...allActivities.harmattan.activities,
-    ...allActivities.rain.activities,
-  ];
-};
-
-// Helper function to get activities by type
-export const getActivitiesByType = (type) => {
-  return getAllActivities().filter(activity => activity.type === type);
-};
-
-// Helper function to get activities by date range
-export const getActivitiesInRange = (startDate, endDate) => {
-  return getAllActivities().filter(activity => {
-    return activity.startDate >= startDate && activity.endDate <= endDate;
-  });
-};
-
-// Helper function to get current week activities
-export const getCurrentWeekActivities = () => {
-  const now = new Date();
-  return getAllActivities().filter(activity => {
-    return activity.startDate <= now && activity.endDate >= now;
-  });
-};
