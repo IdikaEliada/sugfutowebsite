@@ -434,7 +434,29 @@
         footer.classList.remove('fixed')
         footer.classList.add('absolute')
       }
-    });
+      
+      
+        // Auto-scroll to current/upcoming event
+        const container = document.getElementById('timelineContainer');
+        container.addEventListener('load', () => {
+          if (!container) return;
+          const items = Array.from(container.querySelectorAll('.timeline-item'));
+          const today = new Date().toISOString().split('T')[0];
+
+          // Find first future or today's event
+          let targetItem = items.find(item => item.dataset.date >= today);
+
+          // If no future events, go to last past event
+          if (!targetItem && items.length > 0) {
+            targetItem = items[items.length - 1];
+          }
+
+          if (targetItem) {
+            targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        });
+    })
+    
   </script>
   <!-- Bootstrap JS -->
   
