@@ -202,6 +202,12 @@ export const allActivities = [
         endDate: new Date('2026-03-30'),
         type: "break",
       },
+      {
+        description: "Testing the scroll feature",
+        startDate: new Date('2025-11-03'),
+        endDate: new Date('2025-11-03'),
+        type: "break",
+      },
     ],
   },
   {
