@@ -170,11 +170,8 @@ if(selectExcos){
     setTimeout(() => {
       timetableSearch.setupSearch(searchInput, resultsInfo, timetablesGrid);
     }, 100);
-    renderResource(calendarData, calendarGrid)
-    calendarSelector.onchange = () => {
-      calendarGrid.innerHTML = `
-        ${calendarData.renderHTML(calendarSelector.value)}`
-    }
+    renderResource(calendarData, calendarGrid, calendarSelector)
+    
     setTimeout(() => {
       calendarSearch.setupSearch(searchInputCal, resultsInfo, calendarGrid);
     }, 100);
