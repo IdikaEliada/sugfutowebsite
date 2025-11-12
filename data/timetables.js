@@ -45,6 +45,18 @@ export const allTimetables = [
     faculty: "SESET",
     path: "../data/PDFs/SESET_DRAFT _(01)_ 2025_2026 HARMATTAN LECTURE TIMETABLE (AOA) (1).docx",
     description: "2025/2026 Harmattan Semester Lecture Timetable for SESET",
-    name: "2025-2026 SOES Harmattan Lecture Timetable"
+    name: "2025-2026 SESET_DRAFT Harmattan Lecture Timetable"
+  },
+  {
+    faculty: "SBMS",
+    path: "../data/PDFs/UPDATED COM HARM. SEMESTER 2025-26 LECTURE TIMETABLE, OCT. 2025.docx",
+    description: "2025/2026 Harmattan Semester Lecture Timetable for SBMS",
+    name: "2025-2026 SBMS Harmattan Lecture Timetable"
+  },
+  {
+    faculty: "SAAT",
+    path: "../data/PDFs/SAAT 2025 2026 HARM LECTURE TIMETABLE .doc",
+    description: "2025/2026 Harmattan Semester Lecture Timetable for SAAT",
+    name: "2025-2026 SAAT Harmattan Lecture Timetable"
   }
 ];
