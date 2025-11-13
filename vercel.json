@@ -17,5 +17,7 @@
       "destination": "/:path*",
       "permanent": true
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
