@@ -6,6 +6,8 @@
     { "source": "/social",        "destination": "/socials.html" },
     { "source": "/contact",
       "destination": "/contact-us.html" },
+    { "source": "/resources/:path*.html",
+      "destination": "/resources/:path*" },
     {
       "source": "/:path*",
       "destination": "/:path*.html"
