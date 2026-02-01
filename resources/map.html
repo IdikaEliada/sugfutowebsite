@@ -481,12 +481,15 @@
     document.addEventListener("DOMContentLoaded", function() {
         AOS.init();
         
-        const footer = document.querySelector('footer')
+      const footer = document.querySelector('footer')
 
-        if(document.body.clientHeight < 500){
-          footer.classList.remove('absolute')
-          footer.classList.add('fixed')
-        }
+      if(document.body.clientHeight < 500){
+        footer.classList.remove('absolute')
+        footer.classList.add('fixed')
+      } else {
+        footer.classList.remove('fixed')
+        footer.classList.add('absolute')
+      }
       });
   </script>
   <!-- Bootstrap JS -->

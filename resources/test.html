@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Theme Switcher - Tailwind CDN</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',   // very important!
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0f9ff',
+              600: '#2563eb',
+              700: '#1d4ed8',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Optional: smooth background transition */
+    html {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">
+
+  <!-- Header / Navbar -->
+  <header class="border-b border-gray-200 dark:border-gray-800">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+      <h1 class="text-2xl font-bold">My Website</h1>
+
+      <!-- Theme Toggle Button -->
+      <button id="theme-toggle" 
+              class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+        <!-- Sun icon (light mode) -->
+        <svg id="sun-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <!-- Moon icon (dark mode) -->
+        <svg id="moon-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-12">
+    <h2 class="text-4xl font-bold mb-6">Theme Switch Demo</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+        <h3 class="text-xl font-semibold mb-2">Card 1</h3>
+        <p class="text-gray-600 dark:text-gray-400">This card changes color automatically</p>
+      </div>
+      <div class="p-6 rounded-xl bg-primary-50 dark:bg-gray-900 border border-primary-600/30 dark:border-primary-500/30">
+        <h3 class="text-xl font-semibold mb-2 text-primary-700 dark:text-primary-400">Card 2</h3>
+        <p class="text-gray-600 dark:text-gray-400">Using custom color too!</p>
+      </div>
+      <div class="p-6 rounded-xl bg-white dark:bg-gray-900 shadow-lg dark:shadow-gray-950/50">
+        <h3 class="text-xl font-semibold mb-2">Card 3</h3>
+        <p class="text-gray-600 dark:text-gray-400">Has shadow that adapts</p>
+      </div>
+    </div>
+
+    <div class="mt-12 p-8 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950 rounded-2xl">
+      <p class="text-lg text-center">Try switching the theme →</p>
+    </div>
+  </main>
+
+  <!-- Theme Switch JavaScript -->
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const sunIcon = document.getElementById('sun-icon');
+    const moonIcon = document.getElementById('moon-icon');
+
+    // Check for saved theme preference or use system preference
+    function getCurrentTheme() {
+      if (localStorage.theme === 'dark' || 
+          (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        return 'dark';
+      }
+      return 'light';
+    }
+
+    function setTheme(theme) {
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.theme = 'dark';
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+      } else {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.theme = 'light';
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
+      }
+    }
+
+    // Set initial theme
+    setTheme(getCurrentTheme());
+
+    // Toggle theme when button is clicked
+    themeToggle.addEventListener('click', () => {
+      if (localStorage.theme === 'dark') {
+        setTheme('light');
+      } else {
+        setTheme('dark');
+      }
+    });
+
+    // Listen for system theme change
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if (!('theme' in localStorage)) {
+        setTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+  </script>
+
+</body>
+</html>
