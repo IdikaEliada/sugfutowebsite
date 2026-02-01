@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>3-state Theme Switch (Light / Dark / System)</title>
+  <title>Theme Switch with System Icon</title>
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome CDN (for icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <script>
     tailwind.config = {
@@ -27,34 +30,29 @@
 
   <div class="max-w-4xl mx-auto p-6">
 
-    <div class="flex items-center justify-between mb-10">
+    <div class="flex items-center justify-between mb-12">
       <h1 class="text-3xl font-bold">Theme Switcher</h1>
 
-      <div class="flex items-center gap-2">
-        <button id="theme-btn" 
-                class="px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition font-medium text-sm">
-          <span id="theme-label">Loading...</span>
-        </button>
-      </div>
+      <button id="theme-btn" 
+              class="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+        <i id="theme-icon" class="text-lg w-5 text-center"></i>
+        <span id="theme-label" class="font-medium">Loading...</span>
+      </button>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
       <div class="p-6 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
-        <h3 class="font-semibold mb-2">Card 1</h3>
-        <p class="text-gray-600 dark:text-gray-400">Adapts to current theme</p>
+        <h3 class="font-semibold mb-2">Card A</h3>
+        <p class="text-gray-600 dark:text-gray-400">Adapts automatically</p>
       </div>
-      <div class="p-6 rounded-xl bg-blue-50 dark:bg-gray-900 border border-blue-200 dark:border-blue-800">
-        <h3 class="font-semibold mb-2 text-blue-700 dark:text-blue-400">Card 2</h3>
-        <p class="text-gray-600 dark:text-gray-400">Using color variants</p>
+      <div class="p-6 rounded-xl bg-indigo-50 dark:bg-gray-900 border border-indigo-200 dark:border-indigo-800">
+        <h3 class="font-semibold mb-2 text-indigo-700 dark:text-indigo-400">Card B</h3>
+        <p class="text-gray-600 dark:text-gray-400">Color changes</p>
       </div>
       <div class="p-6 rounded-xl bg-white dark:bg-gray-800 shadow-md dark:shadow-gray-950/50">
-        <h3 class="font-semibold mb-2">Card 3</h3>
+        <h3 class="font-semibold mb-2">Card C</h3>
         <p class="text-gray-600 dark:text-gray-400">With shadow</p>
       </div>
-    </div>
-
-    <div class="mt-12 p-8 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-950 rounded-2xl text-center">
-      <p class="text-lg">Click the button to cycle: Light → Dark → System → Light...</p>
     </div>
 
   </div>
@@ -62,58 +60,70 @@
   <script>
     const html = document.documentElement;
     const themeBtn = document.getElementById('theme-btn');
+    const themeIcon = document.getElementById('theme-icon');
     const themeLabel = document.getElementById('theme-label');
 
     const THEMES = ['light', 'dark', 'system'];
-    let currentThemeIndex = 0;
+    const icons = {
+      light: 'fa-sun',
+      dark:  'fa-moon',
+      system: 'fa-circle-half-stroke'   // ← most popular "system" icon
+      // alternatives you can try:
+      // 'fa-laptop', 'fa-desktop', 'fa-display', 'fa-adjust', 'fa-sliders'
+    };
+
+    let currentTheme = 'system'; // default
 
     // ────────────────────────────────────────────────
-    // Load saved preference or default to 'system'
+    // Load saved preference or default to system
     // ────────────────────────────────────────────────
     function loadTheme() {
       const saved = localStorage.getItem('theme-preference');
       if (saved && THEMES.includes(saved)) {
         setTheme(saved);
       } else {
-        setTheme('system'); // default = system
+        setTheme('system');
       }
     }
 
     // ────────────────────────────────────────────────
-    // Apply the selected theme
+    // Apply theme and update UI
     // ────────────────────────────────────────────────
     function setTheme(theme) {
+      currentTheme = theme;
       localStorage.setItem('theme-preference', theme);
 
-      // Remove old classes
+      // Reset classes
       html.classList.remove('light', 'dark');
 
       if (theme === 'light') {
         html.classList.add('light');
+        themeIcon.className = `fa-solid ${icons.light}`;
         themeLabel.textContent = 'Light';
       } 
       else if (theme === 'dark') {
         html.classList.add('dark');
+        themeIcon.className = `fa-solid ${icons.dark}`;
         themeLabel.textContent = 'Dark';
       } 
       else { // system
-        // We remove both classes → Tailwind falls back to prefers-color-scheme
+        // no class → Tailwind uses prefers-color-scheme
+        themeIcon.className = `fa-solid ${icons.system}`;
         themeLabel.textContent = 'System';
       }
 
-      // Optional: show current effective theme in console
-      const isDark = html.classList.contains('dark') || 
-                     (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-      console.log(`Effective theme: \( {isDark ? 'dark' : 'light'} ( \){theme})`);
+      // Visual feedback
+      themeBtn.classList.add('ring-2', 'ring-blue-500', 'dark:ring-blue-400');
+      setTimeout(() => themeBtn.classList.remove('ring-2', 'ring-blue-500', 'dark:ring-blue-400'), 800);
     }
 
     // ────────────────────────────────────────────────
-    // Cycle to next theme
+    // Cycle through themes
     // ────────────────────────────────────────────────
     function cycleTheme() {
-      currentThemeIndex = (currentThemeIndex + 1) % THEMES.length;
-      const nextTheme = THEMES[currentThemeIndex];
-      setTheme(nextTheme);
+      const currentIndex = THEMES.indexOf(currentTheme);
+      const nextIndex = (currentIndex + 1) % THEMES.length;
+      setTheme(THEMES[nextIndex]);
     }
 
     // ────────────────────────────────────────────────
@@ -121,14 +131,12 @@
     // ────────────────────────────────────────────────
     loadTheme();
 
-    // Button click → cycle
     themeBtn.addEventListener('click', cycleTheme);
 
-    // Listen for system theme change (only matters in 'system' mode)
+    // React to system theme change when in "system" mode
     window.matchMedia('(prefers-color-scheme: dark)')
       .addEventListener('change', (e) => {
         if (localStorage.getItem('theme-preference') === 'system') {
-          // Force re-apply so Tailwind reacts
           html.classList.toggle('dark', e.matches);
         }
       });

@@ -12,6 +12,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
   
   <!-- Taiwind -->
+  
+  <script>
+// polyfill / safety net so tailwind.config doesn't throw
+window.tailwind = window.tailwind || {};
+tailwind.config = tailwind.config || function(cfg) {
+  window.__tailwindConfig = cfg;
+};
+</script>
+
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   
   <script>
@@ -174,10 +183,10 @@
             </div>
           </a>
           
-          <button id="theme-toggle" class="block w-full px-4 py-2 text-sm text-left hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" role="menuitem">
+          <button id="theme-" class="block w-full px-4 py-2 text-sm text-left hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" role="menuitem">
             <div class="flex items-center gap-2">
               <div class="shadow-sm ring-1 ring-white dark:ring-gray-800 ring-inset flex justify-center items-center rounded-full  p-3 w-1 h-4">
-                <i class='fas  fa-solid text-green-800 dark:green-500 text-xs' id="theme-icon"></i>
+                <i class='fas fa-moon fa-solid text-green-800 dark:green-500 text-xs' id="theme-icon"></i>
               </div>
               <span id="theme-label">
                 System 

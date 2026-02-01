@@ -40,17 +40,27 @@ const selectedEventSpan = document.getElementById('selected-events')
 
 const menuIcon = document.getElementById('menu-icon');
 
+const themeBtn = document.getElementById('theme-btn')
+
 const themeIcon = document.getElementById('theme-icon');
 
 const themeLabel = document.getElementById('theme-label');
 
 const THEMES = ['light', 'dark', 'system'];
 
-let currentThemeIndex = 0;
+const icons = {
+  light: 'fa-sun',
+  dark:  'fa-moon',
+  system: 'fa-circle-half-stroke'// ← most popular "system" icon
+  // alternatives you can try:
+  // 'fa-laptop', 'fa-desktop', 'fa-display', 'fa-adjust', 'fa-sliders'
+};
+
+let currentTheme = 'system';
 
 const isMenuOpen = menuIcon.classList.contains('fa-bars')
 
-// const isIcon = themeIcon.classList.contains('fa-moon')
+// const isIcon = themeIcon.classList.contains('')
 
 const searchInput = document.getElementById('timetable-search');
 const searchInputMap = document.getElementById('map-search');
@@ -102,12 +112,7 @@ loadPage(preloader)
 loadingAnimation(images)
 
 const HTML = document.documentElement
-
-function isDarkMode() {
-  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-   }
-
-
+    
 function getIdNumber(element) {
   const parts = element.split('-');
   return parseInt(parts[parts.length - 1]);
@@ -127,10 +132,11 @@ function showPosition(number){
   }
 }
 
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-  console.log('is dark mode?', isDarkMode())
-  changeThemeIcon()
-  systemDefault()
+window.matchMedia('(prefers-color-scheme: dark)')
+  .addEventListener('change', (e) => {
+  if (localStorage.getItem('theme-preference') === 'system') {
+    HTML.classList.toggle('dark', e.matches);
+  }
 });
 
 if(emptyPage){
@@ -335,6 +341,56 @@ export default function loadPage() {
       preloader.remove()
     }
   }, 1000)
+  
+  function loadTheme() {
+  const saved = localStorage.getItem('theme-preference');
+  if (saved && THEMES.includes(saved)) {
+    setTheme(saved);
+  } else {
+    setTheme('system');
+  }
+}
+
+// function isDarkMode() {
+//   return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+//   }
+
+function setTheme(theme) {
+  currentTheme = theme;
+  localStorage.setItem('theme-preference', theme);
+  
+  // Reset classes
+  HTML.classList.remove('light', 'dark');
+  HTML.classList.remove('light', 'dark');
+  
+  if (theme === 'light') {
+    HTML.classList.add('light');
+    themeIcon.className = `fa-solid ${icons.light}`;
+    themeLabel.textContent = 'Light';
+  } else if (theme === 'dark') {
+    HTML.classList.add('dark');
+    themeIcon.className = `fa-solid ${icons.dark}`;
+    themeLabel.textContent = 'Dark';
+  } else { // system
+    // no class → Tailwind uses prefers-color-scheme
+    themeIcon.className = `fa-solid ${icons.system}`;
+    themeLabel.textContent = 'System';
+  }
+  
+  // Visual feedback
+  themeBtn.classList.add('ring-2', 'ring-blue-500', 'dark:ring-blue-400');
+  setTimeout(() => themeBtn.classList.remove('ring-2', 'ring-blue-500', 'dark:ring-blue-400'), 800);
+}
+
+function cycleTheme() {
+  const currentIndex = THEMES.indexOf(currentTheme);
+  const nextIndex = (currentIndex + 1) % THEMES.length;
+  setTheme(THEMES[nextIndex]);
+}
+
+loadTheme();
+
+themeBtn.addEventListener('click', cycleTheme);
   
   if (!isDarkMode()) {
     themeIcon.classList.add('fa-sun')
