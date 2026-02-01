@@ -343,58 +343,58 @@ export default function loadPage() {
   }, 1000)
   
   function loadTheme() {
-  const saved = localStorage.getItem('theme-preference');
-  if (saved && THEMES.includes(saved)) {
-    setTheme(saved);
-  } else {
-    setTheme('system');
-  }
-}
-
-// function isDarkMode() {
-//   return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-//   }
-
-function setTheme(theme) {
-  currentTheme = theme;
-  localStorage.setItem('theme-preference', theme);
-  
-  // Reset classes
-  HTML.classList.remove('light', 'dark');
-  HTML.classList.remove('light', 'dark');
-  
-  if (theme === 'light') {
-    HTML.classList.add('light');
-    themeIcon.className = `fa-solid ${icons.light}`;
-    themeLabel.textContent = 'Light';
-  } else if (theme === 'dark') {
-    HTML.classList.add('dark');
-    themeIcon.className = `fa-solid ${icons.dark}`;
-    themeLabel.textContent = 'Dark';
-  } else { // system
-    // no class → Tailwind uses prefers-color-scheme
-    themeIcon.className = `fa-solid ${icons.system}`;
-    themeLabel.textContent = 'System';
+    const saved = localStorage.getItem('theme-preference');
+    if (saved && THEMES.includes(saved)) {
+      setTheme(saved);
+    } else {
+      setTheme('system');
+    }
   }
   
-  // Visual feedback
-  themeBtn.classList.add('ring-2', 'ring-blue-500', 'dark:ring-blue-400');
-  setTimeout(() => themeBtn.classList.remove('ring-2', 'ring-blue-500', 'dark:ring-blue-400'), 800);
-}
-
-function cycleTheme() {
-  const currentIndex = THEMES.indexOf(currentTheme);
-  const nextIndex = (currentIndex + 1) % THEMES.length;
-  setTheme(THEMES[nextIndex]);
-}
-
-loadTheme();
-
-themeBtn.addEventListener('click', cycleTheme);
+  // function isDarkMode() {
+  //   return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  //   }
   
-  if (!isDarkMode()) {
-    themeIcon.classList.add('fa-sun')
-    themeIcon.classList.remove('fa-moon')
+  function setTheme(theme) {
+    currentTheme = theme;
+    localStorage.setItem('theme-preference', theme);
+    
+    // Reset classes
+    HTML.classList.remove('light', 'dark');
+    HTML.classList.remove('light', 'dark');
+    
+    if (theme === 'light') {
+      HTML.classList.add('light');
+      themeIcon.className = `fa-solid ${icons.light}`;
+      themeLabel.textContent = 'Light';
+    } else if (theme === 'dark') {
+      HTML.classList.add('dark');
+      themeIcon.className = `fa-solid ${icons.dark}`;
+      themeLabel.textContent = 'Dark';
+    } else { // system
+      // no class → Tailwind uses prefers-color-scheme
+      themeIcon.className = `fa-solid ${icons.system}`;
+      themeLabel.textContent = 'System';
+    }
+    
+    // Visual feedback
+    themeBtn.classList.add('ring-2', 'ring-blue-500', 'dark:ring-blue-400');
+    setTimeout(() => themeBtn.classList.remove('ring-2', 'ring-blue-500', 'dark:ring-blue-400'), 800);
   }
+  
+  function cycleTheme() {
+    const currentIndex = THEMES.indexOf(currentTheme);
+    const nextIndex = (currentIndex + 1) % THEMES.length;
+    setTheme(THEMES[nextIndex]);
+  }
+  
+  loadTheme();
+  
+  themeBtn.addEventListener('click', cycleTheme);
+  
+  // if (!isDarkMode()) {
+  //   themeIcon.classList.add('fa-sun')
+  //   themeIcon.classList.remove('fa-moon')
+  // }
 })
 }
