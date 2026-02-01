@@ -42,6 +42,12 @@ const menuIcon = document.getElementById('menu-icon');
 
 const themeIcon = document.getElementById('theme-icon');
 
+const themeLabel = document.getElementById('theme-label');
+
+const THEMES = ['light', 'dark', 'system'];
+
+let currentThemeIndex = 0;
+
 const isMenuOpen = menuIcon.classList.contains('fa-bars')
 
 // const isIcon = themeIcon.classList.contains('fa-moon')
